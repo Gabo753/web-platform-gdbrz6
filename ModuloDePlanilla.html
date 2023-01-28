@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="icon" href="../storage/logo.ico" type="text/x-icon" />
+    <title>Meraki Software - Restaurantes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="styles3.css" />
+    <link rel="stylesheet" href="styles4.css" />
+    <link rel="stylesheet" href="styles5.css" />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="
+          navbar
+          fixed-top
+          navbar-expand-lg navbar-dark
+          primary-color-dark
+          scrolling-navbar
+        "
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#basicExampleNav"
+          aria-controls="basicExampleNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="inicio.html">
+          <span class="visible-ms"
+            ><b class="font-weight-bold">MERAKI</b> SOFTWARE</span
+          ><span class="invisible-ms"><b class="font-weight-bold">M</b>S</span>
+        </a>
+        <div class="invisible-ms">
+          <button
+            class="btn btn-outline-white waves-effect waves-light btn-sm"
+            data-toggle="modal"
+            data-target="#modalCerrarSesion"
+          >
+            <i class="fas fa-power-off"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+          <ul class="navbar-nav mr-auto invisible-ms text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDeUsuarios"
+                >USUARIO
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePlanilla">PLANILLA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePedidos" onclick="CargarData();"
+                >PEDIDOS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="ModuloDeAtencion"
+                onclick="CargarData();"
+                >ATENCI&Oacute;N</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDeReporte">REPORTES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePerfil">PERFIL</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto visible-ms d-flex">
+            <li class="nav-item nav-title-user">
+              <a class="nav-link mt-1"
+                ><i class="fas fa-user"></i> EDWARD CAMPOS ARCIA - BEGONIAS</a
+              >
+            </li>
+            <button
+              class="btn btn-outline-white waves-effect waves-light btn-sm"
+              data-toggle="modal"
+              data-target="#modalCerrarSesion"
+            >
+              <i class="fas fa-power-off"></i>
+            </button>
+          </ul>
+        </div>
+      </nav>
+      <!--MODAL CERRAR SESION-->
+      <div
+        class="modal fade"
+        id="modalCerrarSesion"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-sm modal-notify modal-danger"
+          role="document"
+        >
+          <div class="modal-content text-center">
+            <div class="modal-header d-flex justify-content-center">
+              <p class="heading font-weight-bolder">¿Deséa Cerrar Sesión?</p>
+            </div>
+            <div class="modal-body">
+              <i class="fas fa-power-off fa-4x animated rotateIn"></i>
+            </div>
+            <div class="modal-footer flex-center">
+              <a href="SALIR" class="btn btn-danger waves-effect">SI</a>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                data-dismiss="modal"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mt-main">
+      <div class="container-fluid">
+        <section class="mt-lg-5">
+          <div class="row card-xs-ms">
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row d-flex ff-ms reportes-ms">
+                    <div class="flex-fill">
+                      <a
+                        href="Jornadas"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                          active
+                        "
+                        >JORNADA</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row card-xs-ms">
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div id="toolbar">
+                    <!--AGREGAR-->
+                    <button
+                      type="submit"
+                      id="alertBtn"
+                      class="
+                        btn btn-primary btn-sm btn-table-ms
+                        waves-effect waves-light
+                        my-0
+                        mx-0
+                      "
+                      data-toggle="modal"
+                      data-target="#myModal"
+                      data-backdrop="static"
+                      data-keyboard="false"
+                    >
+                      <i class="fas fa-plus"></i>
+                      <span class="d-inline-title">AGREGAR</span>
+                    </button>
+                    <div
+                      class="modal"
+                      id="myModal"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="myModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-notify modal-primary"
+                        role="document"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <p class="heading lead">AGREGAR JORNADA</p>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true" class="white-text"
+                                >&times;</span
+                              >
+                            </button>
+                          </div>
+                          <form
+                            action="InsertarJornada"
+                            class="leter-label-ms"
+                            method="POST"
+                            autocomplete="off"
+                          >
+                            <div class="modal-body">
+                              <div class="form-group row text-left">
+                                <label
+                                  for="tipoF"
+                                  class="col-sm-3 col-md-3 col-form-label"
+                                  >Tipo</label
+                                >
+                                <div class="col-sm-9 col-md-9">
+                                  <div class="md-form my-0">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="tipoF"
+                                      name="tipo"
+                                      placeholder="* Obligatorio"
+                                      maxlength="20"
+                                      required
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group row text-left">
+                                <label
+                                  for="horasF"
+                                  class="col-sm-3 col-md-3 col-form-label"
+                                  >Horas</label
+                                >
+                                <div class="col-sm-9 col-md-9">
+                                  <div class="md-form my-0">
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      id="horasF"
+                                      name="horas"
+                                      placeholder="* Obligatorio"
+                                      min="0"
+                                      max="24"
+                                      required
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group row text-left">
+                                <label
+                                  for="sueldoF"
+                                  class="col-sm-3 col-md-3 col-form-label"
+                                  >Sueldo</label
+                                >
+                                <div class="col-sm-9 col-md-9">
+                                  <div class="md-form my-0">
+                                    <input
+                                      type="number"
+                                      step="any"
+                                      class="form-control"
+                                      id="sueldoF"
+                                      name="sueldo"
+                                      placeholder="* Obligatorio"
+                                      min="0"
+                                      required
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                              <button
+                                type="submit"
+                                class="btn btn-primary"
+                                name="opcion"
+                                value="insertar"
+                              >
+                                REGISTRAR
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-outline-primary waves-effect"
+                                data-dismiss="modal"
+                              >
+                                CANCELAR
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table
+                      class="table-sm"
+                      data-toggle="table"
+                      data-pagination="false"
+                      data-search="true"
+                      data-page-list="[10, 25, 50, 100, Unlimited]"
+                      data-search-time-out="100"
+                      data-show-columns="false"
+                      data-show-pagination-switch="false"
+                      data-show-toggle="false"
+                      data-toolbar="#toolbar"
+                      data-buttons-class="primary"
+                      data-icon-size="sm"
+                    >
+                      <thead class="thead-light thead-ms">
+                        <tr>
+                          <th
+                            data-halign="center"
+                            data-sortable="false"
+                            data-field="tipo"
+                            class="w-xs"
+                          >
+                            TIPO
+                          </th>
+                          <th
+                            data-align="center"
+                            data-sortable="false"
+                            data-field="horas"
+                            class="w-xs"
+                          >
+                            HORAS
+                          </th>
+                          <th
+                            data-halign="center"
+                            data-sortable="false"
+                            data-field="sueldo"
+                            class="w-xs"
+                          >
+                            SUELDO
+                          </th>
+                          <th
+                            data-align="center"
+                            data-sortable="false"
+                            data-field="opciones"
+                          >
+                            OPCIONES
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>NO APLICA</td>
+                          <td>0</td>
+                          <td class="text-right">S/. 0.00</td>
+                          <td class="text-center">
+                            <div class="btn-group btn-group-sm" role="group">
+                              <!--ACTUALIZAR INFROMACION-->
+                              <button
+                                class="
+                                  btn btn-sm btn-info btn-op
+                                  waves-effect waves-light
+                                  btn-sm
+                                "
+                                data-toggle="modal"
+                                data-target="#Upd1"
+                                data-backdrop="static"
+                                data-keyboard="false"
+                              >
+                                <i class="fas fa-edit"></i>
+                              </button>
+                              <!-- MODAL ACTUALIZAR -->
+                              <div
+                                class="modal"
+                                id="Upd1"
+                                tabindex="-1"
+                                role="dialog"
+                                aria-labelledby="myModalLabel"
+                                aria-hidden="true"
+                              >
+                                <div
+                                  class="modal-dialog modal-notify modal-info"
+                                  role="document"
+                                >
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <p class="heading lead">
+                                        ACTUALIZAR JORNADA
+                                      </p>
+                                      <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                      >
+                                        <span
+                                          aria-hidden="true"
+                                          class="white-text"
+                                          >&times;</span
+                                        >
+                                      </button>
+                                    </div>
+                                    <form
+                                      action="ActualizarJornada"
+                                      class="leter-label-ms"
+                                      method="POST"
+                                      autocomplete="off"
+                                    >
+                                      <div class="modal-body">
+                                        <div class="form-group row text-left">
+                                          <label
+                                            for="tipoF1"
+                                            class="
+                                              col-sm-3 col-md-3 col-form-label
+                                            "
+                                            >Tipo</label
+                                          >
+                                          <div class="col-sm-9 col-md-9">
+                                            <div class="md-form my-0">
+                                              <input
+                                                type="text"
+                                                class="form-control"
+                                                id="tipoF1"
+                                                name="tipo"
+                                                maxlength="20"
+                                                value="NO APLICA"
+                                                required
+                                              />
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-group row text-left">
+                                          <label
+                                            for="horasF1"
+                                            class="
+                                              col-sm-3 col-md-3 col-form-label
+                                            "
+                                            >Horas</label
+                                          >
+                                          <div class="col-sm-9 col-md-9">
+                                            <div class="md-form my-0">
+                                              <input
+                                                type="number"
+                                                class="form-control"
+                                                id="horasF1"
+                                                name="horas"
+                                                min="0"
+                                                max="24"
+                                                value="0"
+                                                required
+                                              />
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-group row text-left">
+                                          <label
+                                            for="sueldoF1"
+                                            class="
+                                              col-sm-3 col-md-3 col-form-label
+                                            "
+                                            >Sueldo</label
+                                          >
+                                          <div class="col-sm-9 col-md-9">
+                                            <div class="md-form my-0">
+                                              <input
+                                                type="number"
+                                                class="form-control"
+                                                id="sueldoF1"
+                                                name="sueldo"
+                                                min="0"
+                                                value="0"
+                                                required
+                                              />
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <input name="codigo" value="1" hidden />
+                                      </div>
+                                      <div
+                                        class="
+                                          modal-footer
+                                          justify-content-center
+                                        "
+                                      >
+                                        <button
+                                          type="submit"
+                                          class="btn btn-primary mr-2"
+                                          name="opcion"
+                                          value="actualizar"
+                                        >
+                                          ACTUALIZAR
+                                        </button>
+                                        <button
+                                          type="button"
+                                          class="
+                                            btn btn-outline-primary
+                                            waves-effect
+                                          "
+                                          data-dismiss="modal"
+                                        >
+                                          CANCELAR
+                                        </button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--FIN ACTUALIZAR INFORMACION-->
+                              <!--ELIMINAR-->
+                              <button
+                                class="
+                                  btn btn-sm btn-warning btn-op
+                                  waves-effect waves-light
+                                  btn-sm
+                                "
+                                data-toggle="modal"
+                                data-target="#Del1"
+                                data-backdrop="static"
+                                data-keyboard="false"
+                              >
+                                <i class="fas fa-trash-alt"></i>
+                              </button>
+                              <!-- MODAL ELIMINAR -->
+                              <div
+                                class="modal"
+                                id="Del1"
+                                tabindex="-1"
+                                role="dialog"
+                                aria-labelledby="myModalLabel"
+                                aria-hidden="true"
+                              >
+                                <div
+                                  class="
+                                    modal-dialog modal-notify modal-warning
+                                  "
+                                  role="document"
+                                >
+                                  <!--Content-->
+                                  <div class="modal-content">
+                                    <!--Header-->
+                                    <div class="modal-header">
+                                      <p class="heading lead">
+                                        ELIMINAR JORNADA
+                                      </p>
+                                      <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                      >
+                                        <span
+                                          aria-hidden="true"
+                                          class="white-text"
+                                          >&times;</span
+                                        >
+                                      </button>
+                                    </div>
+                                    <!--Body-->
+                                    <div class="modal-body">
+                                      <div class="text-center">
+                                        <img
+                                          class="img-4x animated rotateIn mb-3"
+                                          src="img/recycling.svg"
+                                          alt=""
+                                        />
+                                        <h3>¿Desea eliminar Jornada?</h3>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="
+                                        modal-footer
+                                        justify-content-center
+                                      "
+                                    >
+                                      <a
+                                        href="DeleteJornada-1"
+                                        class="btn btn-warning mr-2"
+                                        >ELIMINAR</a
+                                      >
+                                      <button
+                                        type="button"
+                                        class="
+                                          btn btn-outline-warning
+                                          waves-effect
+                                        "
+                                        data-dismiss="modal"
+                                      >
+                                        CANCELAR
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!--MENU FLOTANTE-->
+    <div class="fixed-action-btn clearfix d-none d-lg-block d-xl-block">
+      <a
+        class="
+          btn-floating btn-floating-m0 btn-lg
+          primary-color-dark
+          waves-effect waves-light
+        "
+      >
+        <i class="fas fa-home"></i>
+      </a>
+      <ul class="list-unstyled btn-floating-menu">
+        <li>
+          <a
+            href="ModuloDeUsuarios"
+            class="
+              btn-floating
+              primary-color
+              waves-effect waves-light
+              material-tooltip-main
+            "
+            data-toggle="tooltip"
+            data-placement="left"
+            title="USUARIOS"
+          >
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePlanilla"
+            class="btn-floating warning-color waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PLANILLA"
+          >
+            <i class="fas fa-people-carry"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePedidos"
+            onclick="CargarData();"
+            class="btn-floating danger-color waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PEDIDOS"
+          >
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="ModuloDeAtencion"
+            onclick="CargarData();"
+            class="btn-floating light-blue lighten-1 waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="ATENCI&Oacute;N"
+          >
+            <i class="fas fa-clock"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDeReporte"
+            class="btn-floating green waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="REPORTES"
+          >
+            <i class="fas fa-paste"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePerfil"
+            class="btn-floating purple waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PERFIL"
+          >
+            <i class="fas fa-user-cog"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>-->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-table.js"></script>
+    <script
+      type="text/javascript"
+      src="js/locale/bootstrap-table-es-ES.js"
+    ></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      // MATERIAL DE IMPUT SELECT
+      $(document).ready(function () {
+        $('.mdb-select').material_select();
+      });
+    </script>
+    <script type="text/javascript">
+      function CargarData() {
+        swal('Actualizando Kardex, por favor espere.', {
+          icon: 'info',
+          closeOnClickOutside: false,
+          button: false,
+        });
+      }
+    </script>
+  </body>
+</html>

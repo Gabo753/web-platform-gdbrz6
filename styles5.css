@@ -1,0 +1,921 @@
+/*
+ PERU
+*/
+/*
+--------------------------------------------
+                 FUENTES
+--------------------------------------------
+*/
+@font-face {
+  font-family: 'cormorant_garamondlight';
+  src: url('font/cormorantgaramond-light-webfont.woff2') format('woff2'),
+    url('font/cormorantgaramond-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'cormorant_garamondmedium';
+  src: url('font/cormorantgaramond-medium-webfont.woff2') format('woff2'),
+    url('font/cormorantgaramond-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'cormorant_garamondregular';
+  src: url('font/cormorantgaramond-regular-webfont.woff2') format('woff2'),
+    url('font/cormorantgaramond-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-cg_medium {
+  font-family: 'cormorant_garamondmedium';
+}
+/*
+--------------------------------------------
+              FIN FUENTES
+--------------------------------------------
+*/
+/*
+--------------------------------------------
+          COLORES
+--------------------------------------------
+*/
+.bg-tb-rojo {
+  background-color: #9c1a1e !important;
+}
+.bg-ms-gradient {
+  background-image: linear-gradient(to top, #4285f4 0, #115ad4 100%);
+}
+/*
+--------------------------------------------
+          FIN COLORES
+--------------------------------------------
+/*
+/*
+------------------------------------
+  IMAGEN DE FONDO DE DE LOGIN
+------------------------------------
+*/
+.intro-2 {
+  background: url('../img/fondo-balboa.jpg') no-repeat center center;
+  background-size: auto;
+  background-size: cover;
+}
+.rgba-stylish-strong-ms {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.img-logo-login {
+  width: 16rem;
+  height: 100%;
+}
+.br-left-login {
+  border-left: 1px solid #c8c8c8;
+}
+.br-left-login h1 {
+  text-shadow: 1px 1px 4px #4e4e4e;
+}
+/*
+------------------------------------
+  FIN IMAGEN DE FONDO DE DE LOGIN
+------------------------------------
+*/
+/*
+-------------------------------
+          NAVEGADOR
+-------------------------------
+*/
+.visible-ms {
+  display: block;
+}
+.invisible-ms {
+  display: none;
+}
+.avatar img {
+  height: 35px;
+}
+.nav-title-user a {
+  font-size: 0.9rem;
+  color: #fff !important;
+  cursor: default;
+}
+
+.navbar.fixed-top .navbar-collapse,
+.navbar.sticky-top .navbar-collapse {
+  overflow-y: hidden !important;
+}
+.cascading-admin-card .admin-up .data p {
+  font-weight: 600;
+  font-size: 15px;
+  color: #999;
+  letter-spacing: 0.03rem;
+  margin-bottom: 0.5rem;
+}
+.cascading-admin-card .admin-up .fab,
+.cascading-admin-card .admin-up .far,
+.cascading-admin-card .admin-up .fas,
+.z-depth-2 {
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+.card-xs-ms .card-body {
+  padding: 0.7rem;
+}
+.card-xs-ms .py-col-a {
+  margin-bottom: 0.5rem;
+}
+.card-xs-ms .title-busqueda {
+  color: #999;
+  font-weight: 600 !important;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+.tabla-valor p {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.tabla-valor th {
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+}
+.tabla-valor p.p-perso-1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.tabla-valor p.p-perso-2 {
+  font-size: 1.5rem;
+}
+.card-datos .card-header {
+  background-color: rgba(0, 0, 0, 0.01);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+.card-datos .card-header p {
+  font-size: 0.95rem;
+}
+.card-datos .card-body h4 {
+  margin-bottom: 0.55rem !important;
+  margin-top: 0.55rem !important;
+}
+.card-datos .card-body p.p-footer {
+  font-size: 0.9rem;
+}
+.card-datos .card-body .div-p {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.card-datos .card-body .div-p p.div-pcenter {
+  font-size: 1.5rem;
+  line-height: 0.8;
+  font-weight: 300 !important;
+}
+.btn-primary:not([disabled]):not(.disabled).active,
+.btn-primary:not([disabled]):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
+    0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  background-color: #0b51c5 !important;
+}
+.btn-a a {
+  font-size: 0.7rem;
+  padding: 0.6rem;
+}
+.btn-op {
+  padding: 0.3rem 1rem !important;
+  font-size: 0.64rem !important;
+  margin-left: 0.2rem !important;
+  margin-right: 0.2rem !important;
+}
+.thead-ms tr th {
+  font-weight: 700;
+}
+.bootstrap4 .fixed-table-pagination .pagination-detail .dropdown-menu {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.bootstrap4
+  .fixed-table-pagination
+  .pagination-detail
+  .dropdown-menu
+  .dropdown-item.active {
+  background-color: #4285f4;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.bootstrap4 .fixed-table-pagination .pagination-detail .pagination-info {
+  font-size: 0.9rem;
+}
+.bootstrap4 .fixed-table-pagination .pagination-detail .page-list {
+  font-size: 0.9rem;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #95bbf9;
+  outline: 0;
+  box-shadow: 0 0 0 0.001rem rgb(213, 227, 252);
+}
+.input-sm {
+  font-size: 0.82rem;
+}
+.d-inline-title {
+  display: inline-block;
+}
+/*POSICION DE BOTON MENU FLOTANTE*/
+.fixed-action-btn.active ul {
+  height: 390px;
+}
+.fixed-action-btn ul li {
+  margin-bottom: 0px;
+}
+.fixed-action-btn {
+  right: 5px;
+  bottom: 5px;
+  padding-top: 0px;
+}
+.btn-floating-m0 {
+  margin: 0px;
+}
+/*FIN MENU FLOTANTE*/
+.img-4x {
+  width: 10rem;
+}
+.leter-label-ms label.col-form-label {
+  font-size: 0.9rem;
+}
+.btn.btn-table-ms {
+  padding: 0.5rem 1.3rem;
+}
+.bootstrap4
+  .fixed-table-toolbar
+  .columns
+  .keep-open
+  .dropdown-menu
+  .dropdown-item
+  [type='checkbox']:checked,
+[type='checkbox']:not(:checked) {
+  position: relative;
+  opacity: 1;
+  cursor: pointer;
+  margin-top: 0.22rem;
+}
+.bootstrap4 .fixed-table-toolbar .columns .keep-open .dropdown-menu {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+.bootstrap4
+  .fixed-table-toolbar
+  .columns
+  .keep-open
+  .dropdown-menu
+  .dropdown-item {
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+.bootstrap4
+  .fixed-table-toolbar
+  .columns
+  .keep-open
+  .dropdown-menu
+  .dropdown-item.active,
+.bootstrap4
+  .fixed-table-toolbar
+  .columns
+  .keep-open
+  .dropdown-menu
+  .dropdown-item:active {
+  color: #000;
+  text-decoration: none;
+  background-color: #f9f9f9;
+}
+.bootstrap4
+  .fixed-table-toolbar
+  .columns
+  .keep-open
+  .dropdown-menu
+  .dropdown-item
+  span {
+  font-size: 0.9rem;
+}
+.md-form .label-input-file {
+  top: -12px;
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+.custom-file-input:lang(es) ~ .custom-file-label::after {
+  content: 'Elegir';
+  background: #4285f4;
+  color: #fff;
+  padding: 1rem 1.6rem;
+  font-size: 0.64rem;
+  top: 5px;
+  border-radius: 0.125rem;
+  border: 0;
+  text-transform: uppercase;
+  cursor: pointer !important;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  line-height: 0;
+}
+.custom-file-input:focus ~ .custom-file-label {
+  box-shadow: none;
+  border-bottom: 2px solid #4285f4;
+  border-radius: 0px;
+  border-bottom-right-radius: 0.125rem;
+}
+.cursor-p {
+  cursor: pointer !important;
+}
+.img-table img {
+  width: 4.5rem;
+  height: auto;
+}
+.custom-select:focus {
+  border-color: #4285f4;
+  outline: 0;
+  box-shadow: none;
+}
+.card-shadow {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  /*border: 0 !important;*/
+}
+/*MESAS*/
+/*OCUPADO*/
+.card-mesa-ocupada {
+  border: 3px solid #4285f4 !important;
+}
+.card-mesa-ocupada i {
+  font-size: 2rem !important;
+  color: #4285f4;
+}
+.card-mesa-ocupada span {
+  font-size: 1.5rem !important;
+  color: #4285f4;
+}
+.card-mesa-ocupada p {
+  font-size: 0.9rem !important;
+  color: #4285f4;
+}
+/*DESOCUPADO*/
+.card-mesa-vacia {
+  border: 3px solid #b5b5b5 !important;
+}
+.card-mesa-vacia i {
+  font-size: 2rem !important;
+  color: #b5b5b5;
+}
+.card-mesa-vacia span {
+  font-size: 1.5rem !important;
+  color: #b5b5b5;
+}
+.card-mesa-vacia p {
+  font-size: 0.9rem !important;
+  color: #b5b5b5;
+}
+/*OTRO MOZO*/
+.card-mesa-otro-mozo {
+  border: 3px solid #ff3547 !important;
+}
+.card-mesa-otro-mozo i {
+  font-size: 2rem !important;
+  color: #ff3547;
+}
+.card-mesa-otro-mozo span {
+  font-size: 1.5rem !important;
+  color: #ff3547;
+}
+.card-mesa-otro-mozo p {
+  font-size: 0.9rem !important;
+  color: #ff3547;
+}
+.checkbox-cortesia[type='checkbox']:not(:checked) {
+  position: absolute !important;
+  opacity: 0;
+}
+.btn-cerrar-pos-absol {
+  position: absolute;
+  right: 15px;
+}
+.pdtb a {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+.pdtb-btn button {
+  padding-top: 0.55rem !important;
+  padding-bottom: 0.55rem !important;
+}
+.form-control::placeholder {
+  color: #bbb;
+  opacity: 1;
+}
+.table td {
+  vertical-align: middle;
+}
+.pers-mm p {
+  font-size: 1rem !important;
+  line-height: 1 !important;
+}
+.modal-dialog-cuenta {
+  margin-top: 36px !important;
+  max-width: 100%;
+}
+.d-block-check {
+  display: inline-block;
+}
+.d-block-check-input {
+  width: 60px;
+  display: inline-block !important;
+}
+.td-width {
+  width: 126px !important;
+}
+.td-width,
+.td-width-check {
+  padding-right: 20px;
+}
+.td-width,
+.td-width-center {
+  padding-top: 0.4rem;
+}
+.td-width,
+.td-form-control {
+  width: 80px;
+}
+.modal-extra-paga {
+  max-width: 1000px !important;
+}
+.icon-pagar {
+  width: 160px;
+  margin-bottom: 1.8rem;
+}
+.modal-dialog.modal-notify.modal-success-pagar .modal-header {
+  background-color: #0e9347;
+}
+.btn-success-pagar {
+  background-color: #0e9347 !important;
+  color: #fff !important;
+}
+.btn-success-pagar:hover,
+.btn-success-pagar:active,
+.btn-success-pagar:focus {
+  background-color: #0e9347 !important;
+  color: #fff;
+}
+.btn-delivery-llevar {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+}
+.btn-toolbar-detalle {
+  font-size: 0.72rem !important;
+}
+textarea {
+  resize: none;
+}
+.mtb-detalle {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.modal-dialog.modal-notify.modal-info-delivery .modal-header {
+  background-color: #2bbbad !important;
+}
+.modal-dialog.modal-notify.modal-info-llevar .modal-header {
+  background-color: #a6c !important;
+}
+.modal-dialog.cascading-modal .modal-header-cuenta {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: 0;
+  margin: 0px;
+  border: none;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  text-align: left;
+}
+.icon-pagar-2 {
+  width: 80px;
+  margin-bottom: 0.5rem;
+}
+table.table-hover tbody tr.tr-stigv {
+  background-color: rgb(255, 255, 255);
+}
+table.table-hover tbody tr.tr-stigv-th {
+  background-color: rgb(247, 247, 247);
+}
+.td-width-center {
+  padding-top: 0.4rem;
+}
+.btn.btn-sm.btn-sm-mesa {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.1rem 1rem;
+  background: #fff !important;
+}
+.btn.btn-sm.btn-sm-admin {
+  font-size: 0.9rem;
+  padding: 0.1rem 1rem;
+  background: #fff !important;
+}
+ul.list-detalle li:before {
+  content: '\f058';
+  font-family: Font Awesome \35 Free;
+  display: inline-block;
+  margin-left: -1.3em;
+  width: 1.3em;
+  color: #73b980;
+}
+ul.list-detalle {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+ul.list-detalle li {
+  font-size: 0.7rem;
+}
+.text-center-p p {
+  text-align: right;
+}
+.pd-btn-anular {
+  padding: 0.84rem 1.14rem;
+}
+.reportes-ms button.btn.btn-sm {
+  font-size: 0.9rem;
+}
+.mb-input-ms input,
+.mb-input-ms select {
+  margin-bottom: 1rem;
+}
+.ff-ms {
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+.ff-ms .flex-fill {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+.ff-ms a.btn {
+  font-size: 0.7rem;
+  padding: 0.6rem 0.4rem;
+  margin-bottom: 0;
+}
+.form-pers-ms .form-group label.col-form-label {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.form-pers-ms .md-form input {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.form-check-inline {
+  margin-right: 1rem;
+}
+.form-check-input[type='checkbox'] + label,
+label.btn input[type='checkbox'] + label {
+  padding-left: 23px;
+}
+
+/*=================== COCINA =================*/
+.ms-pedidos_cocina ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ms-pedidos_cocina ul li p {
+  text-align: left;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+.ms-pedidos_cocina ul li p span {
+  float: right;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.ms-pedidos_cocina ul li p b {
+  line-height: 0.9em;
+}
+.ms-pedidos_cocina ul li p b.ms-mozo {
+  font-size: 1.3rem;
+}
+.pprl {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.ms-pedidos_cocina .card-header {
+  padding: 0.5rem;
+  /*background-color: #013a99 !important;*/
+}
+.ms-pedidos_cocina_body ul li {
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.35rem;
+  border-bottom: 1px solid #f2f2f2;
+}
+.ms-pedidos_cocina_body ul li:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.ms-pedidos_cocina_body ul li a {
+  color: #333;
+}
+.ms-pedidos_cocina_body ul li a.text-dark {
+  color: #000 !important;
+  font-weight: 600;
+}
+.ms-pedidos_cocina_body ul li a.text-danger {
+  text-decoration: line-through;
+  font-weight: 600;
+}
+.ms-pedidos_cocina_body ul li a span {
+  color: #495057;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+.ms-pedidos_cocina_body .mt-1 a {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.img-tam-add {
+  width: 33%;
+}
+.ms-card-header {
+  background: #4285f4;
+  color: #fff;
+}
+.btn-outline-ms_primary {
+  float: right;
+  border: 2px solid #fff !important;
+  color: #fff !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+.ms-text-total {
+  font-size: 1.5rem;
+}
+.reportes-ms .flex-fill a {
+  font-weight: 600;
+}
+.ms-pd-btn-time {
+  padding: 0.2rem 0.8rem !important;
+  margin-bottom: 0.4rem !important;
+  margin-left: 0.2rem !important;
+}
+/*=================== FIN COCINA =================*/
+.ms-full-pagina,
+body,
+.ms-page {
+  height: 100%;
+}
+.ms-btn-verde {
+  background: #00c851;
+  color: #fff;
+}
+.ms-btn-rojo {
+  background: #ff3547;
+  color: #fff;
+}
+.ms-btn_ad {
+  border-radius: 100%;
+  line-height: 8;
+  font-size: 2.8rem;
+  width: 350px;
+  height: 350px;
+  padding: 0;
+  color: #fff;
+  font-weight: 600;
+}
+.ms-btn_ad:hover,
+.ms-btn_ad:active,
+.ms-btn_ad:focus {
+  color: #fff;
+}
+.ms-btn-times .btn.btn-sm {
+  padding: 0.45rem 1.2rem;
+  font-size: 0.68rem;
+}
+.bootstrap-table .fixed-table-container .table.table-pd-cuenta thead th {
+  padding: 0.3rem !important;
+}
+/*------------------------------------------------------------------------------------------------------------------------*/
+/*QUERIES*/
+/*------------------------------------------------------------------------------------------------------------------------*/
+
+@media (min-width: 1300px) {
+  .mt-main {
+    margin-top: 83px;
+  }
+}
+@media (max-width: 1299px) {
+  .mt-main {
+    margin-top: 85px;
+  }
+}
+@media (min-width: 992px) {
+  /*    .py-col-5 .py-col-a{
+          padding-right: 5px;
+          padding-left: 5px;
+          -ms-flex: 0 0 18.667%;
+          flex: 0 0 18.667%;
+          max-width: 18.667%;
+      }*/
+  .py-col-5 .py-col-a {
+    padding-right: 10px;
+    padding-left: 10px;
+    -ms-flex: 0 0 19.667%;
+    flex: 0 0 19.667%;
+    max-width: 19.667%;
+  }
+  .card-xs-ms .title-busqueda {
+    text-align: center;
+  }
+  .input-sm {
+    width: 380px;
+  }
+}
+@media (max-width: 991px) {
+  .img-logo-login {
+    width: 10rem;
+  }
+  .br-left-login h1 {
+    font-size: 1.8rem !important;
+  }
+  .visible-ms {
+    display: none !important;
+  }
+  .invisible-ms {
+    display: block;
+  }
+  .mt-main {
+    margin-top: 85px;
+  }
+  .card-xs-ms .py-col-a {
+    margin-bottom: 0.8rem;
+  }
+  .tabla-valor p {
+    width: 190px;
+    margin-bottom: 0.2rem !important;
+  }
+  .ms-wd-xs {
+    width: 150px;
+  }
+  .ms-text-total {
+    font-size: 1rem;
+    width: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .content-logo-xs {
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+  }
+  .content-logo-xs .logo-img-xs {
+    width: 5rem;
+    margin-bottom: 1rem;
+  }
+  .mt-main {
+    margin-top: 85px;
+  }
+  .card-xs-ms .card-body {
+    padding: 0.6rem;
+  }
+  .card-xs-ms .my-al {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .card-xs-ms .mb-md-form {
+    margin-bottom: 0.7rem;
+  }
+  .tabla-valor p.p-perso-1 {
+    font-size: 1.4rem;
+  }
+  .bootstrap-table .fixed-table-container .table.table-sm .w-xs .th-inner {
+    width: 230px !important;
+  }
+  .input-sm {
+    width: 280px;
+  }
+  .d-inline-title {
+    display: none;
+  }
+  .btn-a a {
+    padding: 0.4rem;
+  }
+  .ms-btn_ad {
+    border-radius: 100%;
+    font-size: 2rem;
+    width: 250px;
+    height: 250px;
+    padding: 0;
+    line-height: 8;
+  }
+  .pers-mm .ms-leyenda-left {
+    display: block;
+    float: left;
+  }
+  .pers-mm .ms-leyenda-right {
+    display: block;
+    float: right;
+  }
+  .modal-dialog-cuenta {
+    margin-top: 36px !important;
+  }
+  .btn-delivery-llevar {
+    padding: 0.5rem 1rem !important;
+  }
+  .tabs-2 .nav-link {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 576px) {
+  .modal-fluid {
+    max-width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .mt-main {
+    margin-top: 75px;
+  }
+  .btn-a .btn-apr {
+    padding-right: 5px;
+  }
+  .btn-a .btn-apl {
+    padding-left: 5px;
+  }
+  .bootstrap4 .fixed-table-toolbar .float-right.search {
+    margin-top: 0px;
+  }
+  /*MESAS*/
+  /*OCUPADO*/
+  .card-mesa-ocupada p {
+    font-size: 0.8rem !important;
+  }
+  .card-mesa-ocupada span {
+    font-size: 1.2rem !important;
+  }
+  .card-mesa-ocupada i {
+    font-size: 1.5rem !important;
+  }
+  /*DESOCUPADO*/
+  .card-mesa-vacia p {
+    font-size: 0.8rem !important;
+  }
+  .card-mesa-vacia span {
+    font-size: 1.2rem !important;
+  }
+  .card-mesa-vacia i {
+    font-size: 1.5rem !important;
+  }
+  /*OTRO USUARIO*/
+  .card-mesa-otro-mozo p {
+    font-size: 0.8rem !important;
+  }
+  .card-mesa-otro-mozo span {
+    font-size: 1.2rem !important;
+  }
+  .card-mesa-otro-mozo i {
+    font-size: 1.5rem !important;
+  }
+  .modal-dialog.modal-notify .heading.hl-font-xs {
+    font-size: 0.9rem;
+  }
+  .pd-cero-buscador .pd-c-b {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .alt-pd-cero {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .tam-xs-total {
+    width: 105px;
+  }
+  .modal {
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-responsive {
+    -webkit-overflow-scrolling: unset;
+  }
+  .ms-text-insumo {
+    font-size: 0.8rem;
+  }
+  .modal-dialog-cuenta {
+    margin-top: 36px !important;
+  }
+}
+/*
+------------------------------------------------------------------------------
+                                  FIN QUERIES
+------------------------------------------------------------------------------
+*/

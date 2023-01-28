@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<link rel="icon" href="../storage/logo.ico" type="text/x-icon">
+<title>Meraki Software - Restaurantes</title>
+ <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="styles3.css" />
+    <link rel="stylesheet" href="styles4.css" />
+    <link rel="stylesheet" href="styles5.css" />
+        </head>
+        </head>
+        <body>
+            <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark primary-color-dark scrolling-navbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="inicio">
+            <span class="visible-ms"><b class="font-weight-bold">MERAKI</b> SOFTWARE</span><span class="invisible-ms"><b class="font-weight-bold">M</b>S</span>
+        </a>
+        <div class="invisible-ms">
+            <button class="btn btn-outline-white waves-effect waves-light btn-sm" data-toggle="modal" data-target="#modalCerrarSesion">
+                <i class="fas fa-power-off"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+            <ul class="navbar-nav mr-auto invisible-ms text-center">
+                                    <li class="nav-item">
+                        <a class="nav-link" href="ModuloDeUsuarios">USUARIO
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                                                                            <li class="nav-item">
+                            <a class="nav-link" href="ModuloDePlanilla">PLANILLA</a>
+                        </li>
+                                                                <li class="nav-item">
+                            <a class="nav-link" href="ModuloDePedidos" onclick="CargarData();">PEDIDOS</a>
+                        </li>
+                                                                <li class="nav-item">
+                            <a class="nav-link" href="ModuloDeAtencion" onclick="CargarData();">ATENCI&Oacute;N</a>
+                        </li>
+                                                                <li class="nav-item">
+                            <a class="nav-link" href="ModuloDeReporte">REPORTES</a>
+                        </li>
+                                                                        <li class="nav-item">
+                        <a class="nav-link" href="ModuloDePerfil">PERFIL</a>
+                    </li>
+                            </ul>
+            <ul class="navbar-nav ml-auto visible-ms d-flex">
+                <li class="nav-item nav-title-user">
+                    <a class="nav-link mt-1"><i class="fas fa-user"></i> EDWARD CAMPOS ARCIA - BEGONIAS</a>
+                </li>
+                <button class="btn btn-outline-white waves-effect waves-light btn-sm" data-toggle="modal" data-target="#modalCerrarSesion">
+                    <i class="fas fa-power-off"></i>
+                </button>
+            </ul>
+
+        </div>
+    </nav>
+    <!--MODAL CERRAR SESION-->
+    <div class="modal fade" id="modalCerrarSesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="heading font-weight-bolder">¿Deséa Cerrar Sesión?</p>
+                </div>
+                <div class="modal-body">
+                    <i class="fas fa-power-off fa-4x animated rotateIn"></i>
+                </div>
+                <div class="modal-footer flex-center">
+                    <a href="SALIR" class="btn btn-danger waves-effect">SI</a>
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+            <main class="mt-main">
+                <div class="container-fluid">
+                    <section class="mt-lg-5">
+                        <div class="row card-xs-ms">
+                            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row d-flex ff-ms reportes-ms">
+                                                                                            <div class="flex-fill">
+                                                    <a href="Caja" class="btn btn-primary btn-rounded btn-primary btn-block waves-effect waves-light active">CAJA</a>
+                                                </div>
+                                                                                                                                        <div class="flex-fill">
+                                                    <a href="Chica" class="btn btn-primary btn-rounded btn-primary btn-block waves-effect waves-light">CAJA CHICA</a>
+                                                </div>
+                                                                                                                                        <div class="flex-fill">
+                                                    <a href="Configurar" class="btn btn-primary btn-rounded btn-primary btn-block waves-effect waves-light">CONFIGURACI&Oacute;N</a>
+                                                </div>
+                                                                                                                                                                                            <div class="flex-fill">
+                                                        <a href="Cocina" class="btn btn-primary btn-rounded btn-primary btn-block waves-effect waves-light" target="_blank">COCINA</a>
+                                                    </div> 
+                                                                                                                                                    <div class="flex-fill">
+                                                        <a href="Ventas" class="btn btn-primary btn-rounded btn-primary btn-block waves-effect waves-light">VENTA SAL&Oacute;N</a>
+                                                    </div>
+                                                                                                                                                    <div class="flex-fill">
+                                                        <a href="VentaDirecta" class="btn btn-primary btn-rounded btn-primary btn-block waves-effect waves-light">VENTA DIRECTA</a>
+                                                    </div>
+                                                                                                                                                    <div class="flex-fill">
+                                                        <a href="Cuentas" class="btn btn-primary btn-rounded btn-primary btn-block waves-effect waves-light">CUENTAS</a>
+                                                    </div>
+                                                                                                                                                    <div class="flex-fill">
+                                                        <a href="HistorialDeVentas" class="btn btn-primary btn-rounded btn-primary btn-block waves-effect waves-light">HISTORIAL</a>
+                                                    </div>
+                                                                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row card-xs-ms">
+                            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-3">
+                                                                    <div class="card">
+                                        <div class="card-body">
+                                                                                        <div id="toolbar">
+                                                <!--APERTURA-->
+                                                <button data-toggle="modal" data-target="#Abrir" class="btn btn-default btn-sm btn-table-ms waves-effect waves-light my-0 mx-0" disabled><b>APERTURA</b></button>
+                                                <div class="modal" id="Abrir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-notify modal-primary" role="document">
+                                                        <!--Content-->
+                                                        <div class="modal-content">
+                                                            <form action="Apertura" method="POST" autocomplete="off">
+                                                                <!--Header-->
+                                                                <div class="modal-header">
+                                                                    <p class="heading lead">APERTURAR CAJA</p>
+
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true" class="white-text">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <!--Body-->
+                                                                <div class="modal-body">
+                                                                    <div class="text-center">
+                                                                        <img class="img-4x animated rotateIn mb-3" src="img/apertura.svg" alt="">
+                                                                        <h3>¿Desea ingresar monto de apertura?</h3>                                                                    
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <!-- Default input -->
+                                                                        <label class="sr-only" for="apertura">Username</label>
+                                                                        <div class="input-group mb-2">
+                                                                            <div class="input-group-prepend">
+                                                                                <div class="input-group-text">S/.</div>
+                                                                            </div>
+                                                                            <input id="apertura" name="monto" type="number" step="any" class="form-control py-0" value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer justify-content-center">
+                                                                    <button type="submit" class="btn btn-primary mr-2">SI</button>
+                                                                    <button type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">NO</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--CIERRE-->
+                                                <button data-toggle="modal" data-target="#Cerrar" class="btn btn-secondary btn-sm btn-table-ms waves-effect waves-light my-0 mx-0" ><b>CIERRE</b></button>
+                                                <div class="modal" id="Cerrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                     aria-hidden="true">
+                                                    <div class="modal-dialog modal-notify modal-danger" role="document">
+                                                        <!--Content-->
+                                                        <div class="modal-content">
+                                                            <!--Header-->
+                                                            <div class="modal-header">
+                                                                <p class="heading lead">CERRAR CAJA</p>
+
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true" class="white-text">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <!--Body-->
+                                                            <div class="modal-body">
+                                                                <div class="text-center">
+                                                                    <img class="img-4x animated rotateIn mb-3" src="img/cierre.svg" alt="">
+                                                                    <h3>¿Desea Cerrar Caja?</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer justify-content-center">
+                                                                <a href="Cuadre" target="_blank" class="btn btn-success mr-2">REPORTE</a>
+                                                                <a href="Cierre" class="btn btn-danger mr-2">SI</a>
+                                                                <button type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">NO</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal" id="Alerta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-notify modal-warning" role="document">
+                                                        <!--Content-->
+                                                        <div class="modal-content">
+                                                            <form action="Cierre" method="POST" autocomplete="off">
+                                                                <!--Header-->
+                                                                <div class="modal-header">
+                                                                    <p class="heading lead">CERRAR CAJA</p>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true" class="white-text">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <!--Body-->
+                                                                <div class="modal-body">
+                                                                    <div class="text-center">
+                                                                        <h3>HAY MESAS PENDIENTES</h3>
+                                                                        <h5>¿Desea cerrar todas las mesas?</h5>
+                                                                        <input type="hidden" name="pendientes" value="1">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer justify-content-center">
+                                                                    <button type="submit" class="btn btn-warning mr-2">SI</button>
+                                                                    <button type="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">SALIR</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table-sm"
+                                                       data-toggle="table"
+                                                       data-pagination="false"
+                                                       data-search="true"
+                                                       data-page-list="[10, 25, 50, 100, Unlimited]"
+                                                       data-search-time-out="100"
+                                                       data-show-columns="false"
+                                                       data-show-pagination-switch="false"
+                                                       data-show-toggle="false"
+                                                       data-toolbar="#toolbar"
+                                                       data-buttons-class="primary"
+                                                       data-icon-size="sm"
+                                                       >
+                                                    <thead class="thead-light thead-ms">
+                                                        <tr>
+                                                            <th data-align="center" data-sortable="false" data-field="fecha" class="w-xs">FECHA</th>
+                                                            <th data-halign="center" data-sortable="false" data-field="descripcion">DESCRIPCI&Oacute;N</th>
+                                                            <th data-halign="center" data-sortable="false" data-field="monto">MONTO</th>
+                                                            <th data-halign="center" data-sortable="false" data-field="actual">ACTUAL</th>
+                                                            <th data-halign="center" data-sortable="false" data-field="tipo">TIPO</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                                                                                    <tr>
+                                                                <td>28-01-2023 09:40:45</td>
+                                                                <td>T003-33319 - CONSUMO MESA LLEVAR</td>
+                                                                <td class="text-right">S/. 26.00</td>
+                                                                <td class="text-right">S/. 26.00</td>
+                                                                <td class="text-center">INGRESO</td>
+                                                            </tr>
+                                                                                                                    <tr>
+                                                                <td>28-01-2023 10:52:20</td>
+                                                                <td>T003-33318 - CONSUMO MESA 6</td>
+                                                                <td class="text-right">S/. 73.90</td>
+                                                                <td class="text-right">S/. 99.90</td>
+                                                                <td class="text-center">INGRESO</td>
+                                                            </tr>
+                                                                                                                    <tr>
+                                                                <td>28-01-2023 10:57:08</td>
+                                                                <td>T003-33323 - CONSUMO MESA 2</td>
+                                                                <td class="text-right">S/. 25.80</td>
+                                                                <td class="text-right">S/. 125.70</td>
+                                                                <td class="text-center">INGRESO</td>
+                                                            </tr>
+                                                                                                                    <tr>
+                                                                <td>28-01-2023 12:13:39</td>
+                                                                <td>T003-33319 - ANULACION DE VENTA MESA LLEVAR</td>
+                                                                <td class="text-right">S/. 26.00</td>
+                                                                <td class="text-right">S/. 99.70</td>
+                                                                <td class="text-center">EGRESO</td>
+                                                            </tr>
+                                                                                                                    <tr>
+                                                                <td>28-01-2023 12:14:04</td>
+                                                                <td>T003-33319 - CONSUMO MESA LLEVAR</td>
+                                                                <td class="text-right">S/. 14.00</td>
+                                                                <td class="text-right">S/. 113.70</td>
+                                                                <td class="text-center">INGRESO</td>
+                                                            </tr>
+                                                                                                            </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                            </div>
+                        </div>
+                        <div class="row card-xs-ms">
+                            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                                                                <div class="table-responsive">
+                                            <table class="table table-sm table-bordered">
+                                                <tbody>
+                                                    <tr class="text-center thead-light thead-ms">
+                                                        <th colspan="6" class="font-weight-bold" style="font-size: 1rem;">CONSOLIDADO VENTAS</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-primary font-weight-bold" style="font-size: 1rem;">VENTA TOTAL</td>
+                                                        <td class="text-right text-primary font-weight-bold" style="font-size: 1rem;">S/. 464.18</td>
+                                                        <td colspan="2" class="text-center font-weight-bold">INGRESOS S/.</td>
+                                                        <td colspan="2" class="text-center font-weight-bold">S/. 500.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-primary font-weight-bold" style="font-size: 1rem;">EFECTIVO S/.</td>
+                                                        <td class="text-right text-primary font-weight-bold" style="font-size: 1rem;">S/. 113.70</td>
+                                                        <td colspan="2" class="text-center font-weight-bold">EGRESOS S/.</td>
+                                                        <td colspan="2" class="text-center font-weight-bold">S/. 0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-primary font-weight-bold" style="font-size: 1rem;">EFECTIVO NETO S/.</td>
+                                                        <td class="text-right text-primary font-weight-bold" style="font-size: 1rem;">S/. 613.70</td>
+                                                        <td colspan="2" class="text-center font-weight-bold">N° OPERACIONES</td>
+                                                        <td colspan="2" class="text-center font-weight-bold">TICKET PROMEDIO</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-dark font-weight-bold">SAL&Oacute;N</td>
+                                                        <td class="text-right text-dark font-weight-bolder">S/. 99.70</td>
+                                                        <td colspan="2" class="text-center text-default font-weight-bolder">2</td>
+                                                        <td colspan="2" class="text-center text-secondary font-weight-bolder">S/. 49.85</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-dark font-weight-bold">LLEVAR</td>
+                                                        <td class="text-right text-dark font-weight-bolder">S/. 26.00</td>
+                                                        <td colspan="2" class="text-center text-default font-weight-bolder">1</td>
+                                                        <td colspan="2" class="text-center text-secondary font-weight-bolder">S/. 26.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-dark font-weight-bold">DIRECTO</td>
+                                                        <td class="text-right text-dark font-weight-bolder">S/. 0.00</td>
+                                                        <td colspan="2" class="text-center text-default font-weight-bolder">0</td>
+                                                        <td colspan="2" class="text-center text-secondary font-weight-bolder">S/. 0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-dark font-weight-bold">DELIVERY</td>
+                                                        <td class="text-right text-dark font-weight-bolder">S/. 338.48</td>
+                                                        <td colspan="2" class="text-center text-default font-weight-bolder">15</td>
+                                                        <td colspan="2" class="text-center text-secondary font-weight-bolder">S/. 22.57</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-success font-weight-bold">REPARTO</td>
+                                                        <td class="text-right text-dark font-weight-bolder">S/. 54.70</td>
+                                                        <td colspan="2" class="text-center text-default font-weight-bolder">1</td>
+                                                        <td colspan="2" class="text-center text-secondary font-weight-bolder">S/. 54.70</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-success font-weight-bold">PEDIDOSYA</td>
+                                                        <td class="text-right text-dark font-weight-bolder">S/. 198.60</td>
+                                                        <td colspan="2" class="text-center text-default font-weight-bolder">10</td>
+                                                        <td colspan="2" class="text-center text-secondary font-weight-bolder">S/. 19.86</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-success font-weight-bold">RAPPI</td>
+                                                        <td class="text-right text-dark font-weight-bolder">S/. 85.18</td>
+                                                        <td colspan="2" class="text-center text-default font-weight-bolder">4</td>
+                                                        <td colspan="2" class="text-center text-secondary font-weight-bolder">S/. 21.30</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-danger font-weight-bold">COLABORADOR</td>
+                                                        <td class="text-right text-dark font-weight-bolder">S/. 0.00</td>
+                                                        <td colspan="2" class="text-center text-default font-weight-bolder">0</td>
+                                                        <td colspan="2" class="text-center text-secondary font-weight-bolder">S/. 0.00</td>
+                                                    </tr>
+                                                    <!--<tr>
+                                                                                                            <td class="text-dark font-weight-bold">DEUDAS COLABORADOR</td>
+                                                        <td class="text-right text-dark font-weight-bolder"></td>
+                                                        <td class="text-center text-default font-weight-bolder"></td>
+                                                        <td class="text-center text-secondary font-weight-bolder"></td>
+                                                    </tr>-->
+                                                    <tr class="text-center thead-light thead-ms">
+                                                        <th colspan="2" class="font-weight-bold" style="font-size: 1rem;">TICKET PROMEDIO / PERSONA</th>
+                                                        <th colspan="4" class="font-weight-bold" style="font-size: 1rem;">TARJETAS / TRANSFERENCIAS</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark font-weight-bold">ADULTO</td>
+                                                        <td class="text-center text-success font-weight-bolder">2</td>
+                                                        <td class="text-dark font-weight-bolder">VISA</td>
+                                                        <td class="text-center text-primary font-weight-bolder">S/. 350.48</td>
+                                                        <td class="text-dark font-weight-bolder">MASTERCARD</td>
+                                                        <td class="text-center text-primary font-weight-bolder">S/. 0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark font-weight-bold">NIÑO</td>
+                                                        <td class="text-center text-success font-weight-bolder">0</td>
+                                                        <td class="text-dark font-weight-bolder">YAPE</td>
+                                                        <td class="text-center text-primary font-weight-bolder">S/. 0.00</td>
+                                                        <td class="text-dark font-weight-bolder">PLIN</td>
+                                                        <td class="text-center text-primary font-weight-bolder">S/. 0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                                                                                <td class="text-dark font-weight-bold align-middle">TICKET PROMEDIO</td>
+                                                        <td class="text-center text-success font-weight-bolder align-middle">S/. 49.85</td>
+                                                        <td class="text-dark font-weight-bolder">TUNKI</td>
+                                                        <td class="text-center text-primary font-weight-bolder">S/. 0.00</td>
+                                                        <td class="text-dark font-weight-bolder">LUKITA</td>
+                                                        <td class="text-center text-primary font-weight-bolder">S/. 0.00</td>
+                                                        <!--<td class="text-center">
+                                                            <a href="ConsolidadoPDF" class="btn btn-danger btn-sm waves-effect waves-light" target="_blank">EXPORTAR PDF <i class="fas fa-file-pdf"></i></a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <a href="ConsolidadoExcel" class="btn btn-dark-green btn-sm waves-effect waves-light" target="_blank">EXPORTAR EXCEL <i class="fas fa-file-excel"></i></a>
+                                                        </td>-->
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <!--MENU FLOTANTE-->
+            <div class="fixed-action-btn clearfix d-none d-lg-block d-xl-block">
+    <a class="btn-floating btn-floating-m0 btn-lg primary-color-dark waves-effect waves-light">
+        <i class="fas fa-home"></i>
+    </a>
+    <ul class="list-unstyled btn-floating-menu">
+                    <li>
+                <a href="ModuloDeUsuarios" class="btn-floating primary-color waves-effect waves-light material-tooltip-main" data-toggle="tooltip" data-placement="left" title="USUARIOS">
+                    <i class="fas fa-user"></i>
+                </a>
+            </li>
+                                            <li>
+                    <a href="ModuloDePlanilla" class="btn-floating warning-color waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="PLANILLA">
+                        <i class="fas fa-people-carry"></i>
+                    </a>
+                </li>
+                                        <li>
+                    <a href="ModuloDePedidos" onclick="CargarData();" class="btn-floating danger-color waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="PEDIDOS">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                            
+                            <li>
+                    <a href="ModuloDeAtencion" onclick="CargarData();" class="btn-floating light-blue lighten-1 waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="ATENCI&Oacute;N">
+                        <i class="fas fa-clock"></i>
+                    </a>
+                </li>
+                                        <li>
+                    <a href="ModuloDeReporte" class="btn-floating green waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="REPORTES">
+                        <i class="fas fa-paste"></i>
+                    </a>
+                </li>
+                                        <li>
+                <a href="ModuloDePerfil" class="btn-floating purple waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="PERFIL">
+                    <i class="fas fa-user-cog"></i>
+                </a>
+            </li>
+            </ul>
+</div>
+            <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+<!--<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>-->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/locale/bootstrap-table-es-ES.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script src="js/sweetalert.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+</script>
+<script>
+    // MATERIAL DE IMPUT SELECT
+    $(document).ready(function () {
+        $('.mdb-select').material_select();
+    });
+</script>
+<script type="text/javascript">
+    function CargarData() {
+        swal("Actualizando Kardex, por favor espere.", {
+            icon: "info",
+            closeOnClickOutside: false,
+            button: false
+        });
+    }
+</script>        </body>
+    </html>
+    

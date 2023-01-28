@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="icon" href="../storage/logo.ico" type="text/x-icon" />
+    <title>Meraki Software - Restaurantes</title>
+    <link
+      rel="stylesheet"
+      href="icon/fontawesome/css/fontawesome-all.min.css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-table.min.css" />
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/merakisoftware.css" />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="
+          navbar
+          fixed-top
+          navbar-expand-lg navbar-dark
+          primary-color-dark
+          scrolling-navbar
+        "
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#basicExampleNav"
+          aria-controls="basicExampleNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="index.html">
+          <span class="visible-ms"
+            ><b class="font-weight-bold">MERAKI</b> SOFTWARE</span
+          ><span class="invisible-ms"><b class="font-weight-bold">M</b>S</span>
+        </a>
+        <div class="invisible-ms">
+          <button
+            class="btn btn-outline-white waves-effect waves-light btn-sm"
+            data-toggle="modal"
+            data-target="#modalCerrarSesion"
+          >
+            <i class="fas fa-power-off"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+          <ul class="navbar-nav mr-auto invisible-ms text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDeUsuarios.html"
+                >USUARIO
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePlanilla.html">PLANILLA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePedidos" onclick="CargarData();"
+                >PEDIDOS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="ModuloDeAtencion.html"
+                onclick="CargarData();"
+                >ATENCI&Oacute;N</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDeReporte.html">REPORTES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePerfil.html">PERFIL</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto visible-ms d-flex">
+            <li class="nav-item nav-title-user">
+              <a class="nav-link mt-1"
+                ><i class="fas fa-user"></i> EDWARD CAMPOS ARCIA - BEGONIAS</a
+              >
+            </li>
+            <button
+              class="btn btn-outline-white waves-effect waves-light btn-sm"
+              data-toggle="modal"
+              data-target="#modalCerrarSesion"
+            >
+              <i class="fas fa-power-off"></i>
+            </button>
+          </ul>
+        </div>
+      </nav>
+      <!--MODAL CERRAR SESION-->
+      <div
+        class="modal fade"
+        id="modalCerrarSesion"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-sm modal-notify modal-danger"
+          role="document"
+        >
+          <div class="modal-content text-center">
+            <div class="modal-header d-flex justify-content-center">
+              <p class="heading font-weight-bolder">¿Deséa Cerrar Sesión?</p>
+            </div>
+            <div class="modal-body">
+              <i class="fas fa-power-off fa-4x animated rotateIn"></i>
+            </div>
+            <div class="modal-footer flex-center">
+              <a href="salir.html" class="btn btn-danger waves-effect">SI</a>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                data-dismiss="modal"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mt-main">
+      <div class="container-fluid">
+        <section class="mt-lg-5">
+          <div class="row card-xs-ms">
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row d-flex ff-ms reportes-ms">
+                    <div class="flex-fill">
+                      <a
+                        href="Caja.html"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                        "
+                        >CAJA</a
+                      >
+                    </div>
+                    <div class="flex-fill">
+                      <a
+                        href="Chica.html"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                        "
+                        >CAJA CHICA</a
+                      >
+                    </div>
+                    <div class="flex-fill">
+                      <a
+                        href="Configurar.html"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                        "
+                        >CONFIGURACI&Oacute;N</a
+                      >
+                    </div>
+                    <div class="flex-fill">
+                      <a
+                        href="Cocina.html"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                        "
+                        target="_blank"
+                        >COCINA</a
+                      >
+                    </div>
+                    <div class="flex-fill">
+                      <a
+                        href="Ventas.html"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                          active
+                        "
+                        >VENTA SAL&Oacute;N</a
+                      >
+                    </div>
+                    <div class="flex-fill">
+                      <a
+                        href="VentaDirecta.html"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                        "
+                        >VENTA DIRECTA</a
+                      >
+                    </div>
+                    <div class="flex-fill">
+                      <a
+                        href="Cuentas"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                        "
+                        >CUENTAS</a
+                      >
+                    </div>
+                    <div class="flex-fill">
+                      <a
+                        href="HistorialDeVentas"
+                        class="
+                          btn btn-primary btn-rounded btn-primary btn-block
+                          waves-effect waves-light
+                        "
+                        >HISTORIAL</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row card-xs-ms">
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row d-flex justify-content-center btn-a">
+                    <div
+                      class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 btn-apr"
+                    >
+                      <a
+                        href="Ventas-1"
+                        class="
+                          btn btn-default btn-rounded
+                          font-weight-bold
+                          btn-block
+                          mb-2
+                          waves-effect waves-light
+                          active
+                        "
+                        >AMBIENTE UNO</a
+                      >
+                    </div>
+                    <div
+                      class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 btn-apl"
+                    >
+                      <a
+                        href="Ventas-2"
+                        class="
+                          btn btn-default btn-rounded
+                          font-weight-bold
+                          btn-block
+                          mb-2
+                          waves-effect waves-light
+                        "
+                        >AMBIENTE DOS</a
+                      >
+                    </div>
+                    <div
+                      class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 btn-apr"
+                    >
+                      <a
+                        href="Ventas-3"
+                        class="
+                          btn btn-default btn-rounded
+                          font-weight-bold
+                          btn-block
+                          mb-2
+                          waves-effect waves-light
+                        "
+                        >AMBIENTE TRES</a
+                      >
+                    </div>
+                    <div
+                      class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 btn-apl"
+                    >
+                      <a
+                        href="Llevar-1"
+                        class="
+                          btn btn-secondary btn-rounded
+                          font-weight-bold
+                          btn-block
+                          mb-2
+                          waves-effect waves-light
+                        "
+                        >LLEVAR</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row card-xs-ms">
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-1">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 1</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-2">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 2</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-3">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 3</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-4">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 4</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-5">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 5</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-6">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 6</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-7">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 7</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-8">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 8</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-9">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 9</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-10">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 10</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-11">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 11</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-12">
+                <div
+                  class="
+                    card
+                    border-primary
+                    mb-3
+                    card-shadow card-mesa-otro-mozo
+                  "
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 12</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          SUSANLAR
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          14:04
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          1
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          S/. 31.00
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-13">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 13</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-14">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 14</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-15">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 15</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-16">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 16</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-17">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 17</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-18">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 18</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-19">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 19</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mb-3">
+              <a href="PedidosDeMesa-20">
+                <div
+                  class="card border-primary mb-3 card-shadow card-mesa-vacia"
+                >
+                  <div class="card-header">
+                    <i class="fas fa-utensils"></i>
+                    <span class="float-right">Mesa 20</span>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Mozo</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Atenci&oacute;n</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">N° Perns.</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                    <hr class="my-1" />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="d-inline mb-1">Pre-Cuenta</p>
+                        <p class="float-right d-inline font-weight-bolder mb-1">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!--MENU FLOTANTE-->
+    <div class="fixed-action-btn clearfix d-none d-lg-block d-xl-block">
+      <a
+        class="
+          btn-floating btn-floating-m0 btn-lg
+          primary-color-dark
+          waves-effect waves-light
+        "
+      >
+        <i class="fas fa-home"></i>
+      </a>
+      <ul class="list-unstyled btn-floating-menu">
+        <li>
+          <a
+            href="ModuloDeUsuarios"
+            class="
+              btn-floating
+              primary-color
+              waves-effect waves-light
+              material-tooltip-main
+            "
+            data-toggle="tooltip"
+            data-placement="left"
+            title="USUARIOS"
+          >
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePlanilla"
+            class="btn-floating warning-color waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PLANILLA"
+          >
+            <i class="fas fa-people-carry"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePedidos"
+            onclick="CargarData();"
+            class="btn-floating danger-color waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PEDIDOS"
+          >
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="ModuloDeAtencion"
+            onclick="CargarData();"
+            class="btn-floating light-blue lighten-1 waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="ATENCI&Oacute;N"
+          >
+            <i class="fas fa-clock"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDeReporte"
+            class="btn-floating green waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="REPORTES"
+          >
+            <i class="fas fa-paste"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePerfil"
+            class="btn-floating purple waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PERFIL"
+          >
+            <i class="fas fa-user-cog"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>-->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-table.js"></script>
+    <script
+      type="text/javascript"
+      src="js/locale/bootstrap-table-es-ES.js"
+    ></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      // MATERIAL DE IMPUT SELECT
+      $(document).ready(function () {
+        $('.mdb-select').material_select();
+      });
+    </script>
+    <script type="text/javascript">
+      function CargarData() {
+        swal('Actualizando Kardex, por favor espere.', {
+          icon: 'info',
+          closeOnClickOutside: false,
+          button: false,
+        });
+      }
+    </script>
+    <script>
+      var t = false;
+      function contar() {
+        if (t) clearTimeout(t);
+        s = arguments[0] || 0;
+        if (s > 60) location.reload();
+        s++;
+        t = setTimeout('contar(' + s + ')', 1000);
+      }
+      window.onload = document.onmousemove = contar;
+    </script>
+  </body>
+</html>

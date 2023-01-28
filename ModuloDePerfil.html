@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="icon" href="../storage/logo.ico" type="text/x-icon" />
+    <title>Meraki Software - Restaurantes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="styles3.css" />
+    <link rel="stylesheet" href="styles4.css" />
+    <link rel="stylesheet" href="styles5.css" />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="
+          navbar
+          fixed-top
+          navbar-expand-lg navbar-dark
+          primary-color-dark
+          scrolling-navbar
+        "
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#basicExampleNav"
+          aria-controls="basicExampleNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="inicio">
+          <span class="visible-ms"
+            ><b class="font-weight-bold">MERAKI</b> SOFTWARE</span
+          ><span class="invisible-ms"><b class="font-weight-bold">M</b>S</span>
+        </a>
+        <div class="invisible-ms">
+          <button
+            class="btn btn-outline-white waves-effect waves-light btn-sm"
+            data-toggle="modal"
+            data-target="#modalCerrarSesion"
+          >
+            <i class="fas fa-power-off"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+          <ul class="navbar-nav mr-auto invisible-ms text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDeUsuarios"
+                >USUARIO
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePlanilla">PLANILLA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePedidos" onclick="CargarData();"
+                >PEDIDOS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="ModuloDeAtencion"
+                onclick="CargarData();"
+                >ATENCI&Oacute;N</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDeReporte">REPORTES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePerfil">PERFIL</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto visible-ms d-flex">
+            <li class="nav-item nav-title-user">
+              <a class="nav-link mt-1"
+                ><i class="fas fa-user"></i> EDWARD CAMPOS ARCIA - BEGONIAS</a
+              >
+            </li>
+            <button
+              class="btn btn-outline-white waves-effect waves-light btn-sm"
+              data-toggle="modal"
+              data-target="#modalCerrarSesion"
+            >
+              <i class="fas fa-power-off"></i>
+            </button>
+          </ul>
+        </div>
+      </nav>
+      <!--MODAL CERRAR SESION-->
+      <div
+        class="modal fade"
+        id="modalCerrarSesion"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-sm modal-notify modal-danger"
+          role="document"
+        >
+          <div class="modal-content text-center">
+            <div class="modal-header d-flex justify-content-center">
+              <p class="heading font-weight-bolder">¿Deséa Cerrar Sesión?</p>
+            </div>
+            <div class="modal-body">
+              <i class="fas fa-power-off fa-4x animated rotateIn"></i>
+            </div>
+            <div class="modal-footer flex-center">
+              <a href="SALIR" class="btn btn-danger waves-effect">SI</a>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                data-dismiss="modal"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mt-main">
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="
+              col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6
+              align-self-stretch
+            "
+          >
+            <div class="card mb-5">
+              <div class="card-body">
+                <h5 class="text-black-50">ACTUALIZAR DATOS</h5>
+                <form action="ActualizarData" method="POST" autocomplete="off">
+                  <div class="form-group row">
+                    <label
+                      for="nombresF"
+                      class="col-sm-3 col-md-3 col-form-label"
+                      >Nombres</label
+                    >
+                    <div class="col-sm-9 col-md-9">
+                      <div class="md-form mt-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nombresF"
+                          name="nombres"
+                          placeholder="Nombres"
+                          maxlength="45"
+                          value="EDWARD"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label
+                      for="apellidosF"
+                      class="col-sm-3 col-md-3 col-form-label"
+                      >Apellidos</label
+                    >
+                    <div class="col-sm-9 col-md-9">
+                      <div class="md-form mt-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="apellidosF"
+                          name="apellidos"
+                          placeholder="Apellidos"
+                          maxlength="45"
+                          value="CAMPOS ARCIA"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label
+                      for="direccionF"
+                      class="col-sm-3 col-md-3 col-form-label"
+                      >Direcci&oacute;n</label
+                    >
+                    <div class="col-sm-9 col-md-9">
+                      <div class="md-form mt-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="direccionF"
+                          name="direccion"
+                          placeholder="Direccion"
+                          maxlength="90"
+                          value=","
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label
+                      for="celularF"
+                      class="col-sm-3 col-md-3 col-form-label"
+                      >Celular</label
+                    >
+                    <div class="col-sm-9 col-md-9">
+                      <div class="md-form mt-0">
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="celularF"
+                          name="celular"
+                          placeholder="Celular"
+                          value="0"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-12">
+                      <button
+                        type="submit"
+                        class="
+                          btn btn-primary btn-md
+                          float-right
+                          waves-effect waves-light
+                        "
+                      >
+                        ACTUALIZAR
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6
+              d-flex
+              align-self-stretch
+            "
+          >
+            <div class="card mb-5 flex-fill">
+              <div class="card-body">
+                <h5 class="text-black-50">ACTUALIZAR CONTRASEÑA</h5>
+                <form action="UpdatePass" method="POST" autocomplete="off">
+                  <div class="form-group row">
+                    <label for="oldF" class="col-sm-3 col-md-3 col-form-label"
+                      >Actual</label
+                    >
+                    <div class="col-sm-9 col-md-9">
+                      <div class="md-form mt-0">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="oldF"
+                          name="old"
+                          placeholder="Actual Contrase&ntilde;a"
+                          required=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="newF" class="col-sm-3 col-md-3 col-form-label"
+                      >Nueva</label
+                    >
+                    <div class="col-sm-9 col-md-9">
+                      <div class="md-form mt-0">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="newF"
+                          name="new"
+                          placeholder="Nueva Contrase&ntilde;a"
+                          minlength="6"
+                          maxlength="20"
+                          onkeyup="ValidarPass();"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="repF" class="col-sm-3 col-md-3 col-form-label"
+                      >Repetir</label
+                    >
+                    <div class="col-sm-9 col-md-9">
+                      <div class="md-form mt-0">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="repF"
+                          name="rep"
+                          placeholder="Repetir Contrase&ntilde;a"
+                          minlength="6"
+                          maxlength="20"
+                          onkeyup="ConfirmarPass();"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <div id="msg"></div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-12">
+                      <button
+                        id="btnF"
+                        type="submit"
+                        class="
+                          btn btn-primary btn-md
+                          float-right
+                          waves-effect waves-light
+                        "
+                      >
+                        ACTUALIZAR
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input id="estado" value="" hidden />
+        <input id="tipo" value="ADMINISTRADOR" hidden />
+      </div>
+    </main>
+    <!--MENU FLOTANTE-->
+    <div class="fixed-action-btn clearfix d-none d-lg-block d-xl-block">
+      <a
+        class="
+          btn-floating btn-floating-m0 btn-lg
+          primary-color-dark
+          waves-effect waves-light
+        "
+      >
+        <i class="fas fa-home"></i>
+      </a>
+      <ul class="list-unstyled btn-floating-menu">
+        <li>
+          <a
+            href="ModuloDeUsuarios"
+            class="
+              btn-floating
+              primary-color
+              waves-effect waves-light
+              material-tooltip-main
+            "
+            data-toggle="tooltip"
+            data-placement="left"
+            title="USUARIOS"
+          >
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePlanilla"
+            class="btn-floating warning-color waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PLANILLA"
+          >
+            <i class="fas fa-people-carry"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePedidos"
+            onclick="CargarData();"
+            class="btn-floating danger-color waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PEDIDOS"
+          >
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="ModuloDeAtencion"
+            onclick="CargarData();"
+            class="btn-floating light-blue lighten-1 waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="ATENCI&Oacute;N"
+          >
+            <i class="fas fa-clock"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDeReporte"
+            class="btn-floating green waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="REPORTES"
+          >
+            <i class="fas fa-paste"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="ModuloDePerfil"
+            class="btn-floating purple waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="PERFIL"
+          >
+            <i class="fas fa-user-cog"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>-->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-table.js"></script>
+    <script
+      type="text/javascript"
+      src="js/locale/bootstrap-table-es-ES.js"
+    ></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      // MATERIAL DE IMPUT SELECT
+      $(document).ready(function () {
+        $('.mdb-select').material_select();
+      });
+    </script>
+    <script type="text/javascript">
+      function CargarData() {
+        swal('Actualizando Kardex, por favor espere.', {
+          icon: 'info',
+          closeOnClickOutside: false,
+          button: false,
+        });
+      }
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var estado = document.getElementById('estado').value;
+        if (estado === 'ok') {
+          swal('OK!', 'Información actualizada!', 'success').then((value) => {
+            location.href = 'Perfil';
+          });
+        }
+        if (estado === 'wr') {
+          swal('ERROR!', 'Información ingresada errónea!', 'warning').then(
+            (value) => {
+              location.href = 'Perfil';
+            }
+          );
+        }
+      });
+      function ValidarPass() {
+        var tipo = document.getElementById('tipo').value;
+        var txt = document.getElementById('newF');
+        if (!validar(txt.value)) {
+          $('#msg').empty();
+          if (tipo === 'MOZO' || tipo === 'COCNERO') {
+            $('#msg').prepend(
+              '<div class="alert alert-danger" role="alert">\n\
+                        <strong>ERROR!</strong> \n\
+                        La contraseña debe ser máximo de 3 dígitos</div>'
+            );
+          } else {
+            $('#msg').prepend(
+              '<div class="alert alert-danger" role="alert">\n\
+                        <strong>ERROR!</strong> \n\
+                        La contraseña tiene que tener una longitud entre 6 y 20 caracteres, \n\
+                        contener mínimo un número, una letra mayúscula, una letra minúscula y \n\
+                        un  caracter especial como: , . - ; : _ ! @ # $ % & = ? ¿ ¡</div>'
+            );
+          }
+        } else {
+          $('#msg').empty();
+        }
+      }
+      function validar(chain) {
+        var tipo = document.getElementById('tipo').value;
+        if (tipo === 'MOZO' || tipo === 'COCNERO') {
+          if (chain.length > 3) {
+            document.getElementById('btnF').disabled = true;
+            return false;
+          } else {
+            return true;
+          }
+        } else {
+          if (chain.length < 6 || chain.length > 20) {
+            document.getElementById('btnF').disabled = true;
+            return false;
+          } else {
+            if (!chain.match(/[0-9]/)) {
+              document.getElementById('btnF').disabled = true;
+              return false;
+            } else {
+              if (!chain.match(/[a-z]/)) {
+                document.getElementById('btnF').disabled = true;
+                return false;
+              } else {
+                if (!chain.match(/[A-Z]/)) {
+                  document.getElementById('btnF').disabled = true;
+                  return false;
+                } else {
+                  if (!chain.match(/[\,\.\-\;\:\_\!\@\#\$\%\&\=\?\¿\¡]/)) {
+                    document.getElementById('btnF').disabled = true;
+                    return false;
+                  } else {
+                    return true;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      function ConfirmarPass() {
+        var txtN = document.getElementById('newF').value;
+        var txtR = document.getElementById('repF').value;
+        if (txtN !== txtR) {
+          $('#msg').empty();
+          $('#msg').prepend(
+            '<div class="alert alert-danger" role="alert">\n\<strong>ERROR!</strong> \n\La contraseñas no coinciden.</div>'
+          );
+        } else {
+          $('#msg').empty();
+          document.getElementById('btnF').disabled = false;
+        }
+      }
+    </script>
+  </body>
+</html>

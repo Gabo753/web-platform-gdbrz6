@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="icon" href="../storage/logo.ico" type="text/x-icon" />
+    <title></title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="styles3.css" />
+    <link rel="stylesheet" href="styles4.css" />
+    <link rel="stylesheet" href="styles5.css" />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="
+          navbar
+          fixed-top
+          navbar-expand-lg navbar-dark
+          primary-color-dark
+          scrolling-navbar
+        "
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#basicExampleNav"
+          aria-controls="basicExampleNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="index.html">
+          <span class="visible-ms"><b class="font-weight-bold">T</b> P</span
+          ><span class="invisible-ms"><b class="font-weight-bold"></b></span>
+        </a>
+        <div class="invisible-ms">
+          <button
+            class="btn btn-outline-white waves-effect waves-light btn-sm"
+            data-toggle="modal"
+            data-target="#modalCerrarSesion"
+          >
+            <i class="fas fa-power-off"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+          <ul class="navbar-nav mr-auto invisible-ms text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDeUsuarios.html"
+                >USUARIO
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePlanilla.html">PLANILLA</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="ModuloDePedidos.html"
+                onclick="CargarData();"
+                >PEDIDOS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="ModuloDeAtencion.html"
+                onclick="CargarData();"
+                >ATENCI&Oacute;N</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDeReportes.html">REPORTES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ModuloDePerfil.html">PERFIL</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto visible-ms d-flex">
+            <li class="nav-item nav-title-user">
+              <a class="nav-link mt-1"
+                ><i class="fas fa-user"></i> EDWARD CAMPOS ARCIA - BEGONIAS</a
+              >
+            </li>
+            <button
+              class="btn btn-outline-white waves-effect waves-light btn-sm"
+              data-toggle="modal"
+              data-target="#modalCerrarSesion"
+            >
+              <i class="fas fa-power-off"></i>
+            </button>
+          </ul>
+        </div>
+      </nav>
+      <!--MODAL CERRAR SESION-->
+      <div
+        class="modal fade"
+        id="modalCerrarSesion"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-sm modal-notify modal-danger"
+          role="document"
+        >
+          <div class="modal-content text-center">
+            <div class="modal-header d-flex justify-content-center">
+              <p class="heading font-weight-bolder">¿Deséa Cerrar Sesión?</p>
+            </div>
+            <div class="modal-body">
+              <i class="fas fa-power-off fa-4x animated rotateIn"></i>
+            </div>
+            <div class="modal-footer flex-center">
+              <a href="salir.html" class="btn btn-danger waves-effect">SI</a>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                data-dismiss="modal"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mt-main">
+      <div class="container-fluid">
+        <section class="mt-lg-5">
+          <div class="row card-xs-ms">
+            <!--MODULOS-->
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row d-flex justify-content-center py-col-5">
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <a href="ModuloDeUsuarios.html">
+                        <div class="card card-cascade cascading-admin-card">
+                          <div class="admin-up">
+                            <i class="fas fa-user primary-color"></i>
+                            <div class="data">
+                              <p>USUARIOS</p>
+                            </div>
+                          </div>
+                          <div class="card-body card-body-cascade">
+                            <div class="progress mb-3">
+                              <div
+                                class="progress-bar bg-primary"
+                                role="progressbar"
+                                style="width: 100%"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <a href="ModuloDePlanilla.html">
+                        <div class="card card-cascade cascading-admin-card">
+                          <div class="admin-up">
+                            <i class="fas fa-people-carry warning-color"></i>
+                            <div class="data">
+                              <p>PLANILLA</p>
+                            </div>
+                          </div>
+                          <div class="card-body card-body-cascade">
+                            <div class="progress mb-3">
+                              <div
+                                class="progress-bar bg-warning"
+                                role="progressbar"
+                                style="width: 100%"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <a href="ModuloDePedidos.html" onclick="CargarData();">
+                        <div class="card card-cascade cascading-admin-card">
+                          <div class="admin-up">
+                            <i class="fas fa-shopping-cart danger-color"></i>
+                            <div class="data">
+                              <p>PEDIDOS</p>
+                            </div>
+                          </div>
+                          <div class="card-body card-body-cascade">
+                            <div class="progress mb-3">
+                              <div
+                                class="progress-bar bg-danger"
+                                role="progressbar"
+                                style="width: 100%"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <a href="ModuloDeAtencion.html" onclick="CargarData();">
+                        <div class="card card-cascade cascading-admin-card">
+                          <div class="admin-up">
+                            <i class="fas fa-clock light-blue lighten-1"></i>
+                            <div class="data">
+                              <p>ATENCI&Oacute;N</p>
+                            </div>
+                          </div>
+                          <div class="card-body card-body-cascade">
+                            <div class="progress mb-3">
+                              <div
+                                class="progress-bar light-blue lighten-1"
+                                role="progressbar"
+                                style="width: 100%"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <a href="ModuloDeReportes.html">
+                        <div class="card card-cascade cascading-admin-card">
+                          <div class="admin-up">
+                            <i class="fas fa-paste green"></i>
+                            <div class="data">
+                              <p>REPORTES</p>
+                            </div>
+                          </div>
+                          <div class="card-body card-body-cascade">
+                            <div class="progress mb-3">
+                              <div
+                                class="progress-bar green"
+                                role="progressbar"
+                                style="width: 100%"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                      <a href="ModuloDePerfil.html">
+                        <div class="card card-cascade cascading-admin-card">
+                          <div class="admin-up">
+                            <i class="fas fa-user-cog purple"></i>
+                            <div class="data">
+                              <p>PERFIL</p>
+                            </div>
+                          </div>
+                          <div class="card-body card-body-cascade">
+                            <div class="progress mb-3">
+                              <div
+                                class="progress-bar purple"
+                                role="progressbar"
+                                style="width: 100%"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--FIN MODULOS-->
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <form
+                    action="UpdateDashboard"
+                    method="POST"
+                    autocomplete="off"
+                  >
+                    <div class="row d-flex justify-content-center mt-2">
+                      <div class="col-sm-12 col-md-3 col-lg-2">
+                        <h5 class="card-title title-busqueda">
+                          OBTENER DATOS:
+                        </h5>
+                      </div>
+                      <div class="col-sm-12 col-md-3 col-lg-2">
+                        <div class="md-form form-group mt-0 mb-md-form">
+                          <input
+                            type="datetime-local"
+                            name="inicio"
+                            class="form-control"
+                            value="2023-01-28T07:40"
+                            required
+                          />
+                          <label for="formFechaInicio" class="active"
+                            >Fecha Inicio</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-md-1">
+                        <h5 class="my-2 text-center my-al">al</h5>
+                      </div>
+                      <div class="col-sm-12 col-md-3 col-lg-2">
+                        <div class="md-form form-group mt-0 mb-md-form">
+                          <input
+                            type="datetime-local"
+                            name="fin"
+                            class="form-control"
+                            value="2023-01-28T10:47"
+                            required
+                          />
+                          <label for="formFechaFinal" class="active"
+                            >fecha Final</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-sm-4 col-md-2 col-lg-2">
+                        <button
+                          type="submit"
+                          class="
+                            btn btn-primary btn-sm btn-block
+                            waves-effect waves-light
+                            mb-3
+                          "
+                        >
+                          <i class="fa fa-search"></i> BUSCAR
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-bordered tabla-valor">
+                          <tbody>
+                            <tr>
+                              <th>
+                                <p class="text-primary">VENTAS EN EFECTIVO</p>
+                                <p class="text-muted">S/. 26.00</p>
+                              </th>
+                              <th>
+                                <p class="text-default">VENTAS CON TARJETAS</p>
+                                <p class="text-muted">S/. 225.00</p>
+                              </th>
+                              <th>
+                                <p class="text-warning">TRANSFERENCIAS</p>
+                                <p class="text-muted">S/. 0.00</p>
+                              </th>
+                              <th rowspan="2">
+                                <p class="text-default p-perso-1">
+                                  EFECTIVO REAL
+                                </p>
+                                <p class="text-muted p-perso-2">S/. 526.00</p>
+                                <p class="text-default">
+                                  10%
+                                  <i class="far fa-money-bill-alt fa-lg"></i>
+                                </p>
+                              </th>
+                            </tr>
+                            <tr>
+                              <th>
+                                <p class="text-secondary">TOTAL DE VENTAS</p>
+                                <p class="text-muted">S/. 251.00</p>
+                              </th>
+                              <th>
+                                <p class="text-info">INGRESOS DE CAJA</p>
+                                <p class="text-muted">S/. 500.00</p>
+                              </th>
+                              <th>
+                                <p class="text-danger">EGRESOS DE CAJA</p>
+                                <p class="text-muted">S/. 0.00</p>
+                              </th>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mt-3 mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="row d-flex justify-content-center mt-2 card-datos"
+                  >
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <p class="d-inline text-muted font-weight-bold mb-1">
+                            VENTAS EFECTIVO
+                          </p>
+                          <h5 class="float-right text-default mb-0">
+                            <i class="fa fa-money-bill-alt fa-lg"></i>
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title text-default my-0">
+                            S/. 26.00
+                          </h4>
+                          <!--<p class="d-inline text-muted font-weight-bolder my-0 p-footer">Total de ventas</p>-->
+                          <p
+                            class="
+                              float-right
+                              text-warning
+                              font-weight-bolder
+                              my-0
+                              p-footer
+                            "
+                          >
+                            Cr&eacute;dito / Transferencia: S/. 225.00
+                            <i class="fas fa-level-down-alt"></i>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <p class="d-inline text-muted font-weight-bold mb-1">
+                            TIPO DE PAGO
+                          </p>
+                          <h5 class="float-right text-primary mb-0">
+                            <i class="fas fa-credit-card fa-lg"></i>
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <div class="div-p">
+                            <p
+                              class="d-inline text-muted font-weight-bold my-0"
+                            >
+                              Cr&eacute;dito:
+                              <span class="text-default">89.64%</span>
+                            </p>
+                            <p
+                              class="
+                                float-right
+                                text-muted
+                                font-weight-bold
+                                my-0
+                              "
+                            >
+                              Virtual: <span class="text-default">0.00%</span>
+                            </p>
+                          </div>
+                          <div>
+                            <p
+                              class="
+                                d-inline
+                                text-primary
+                                font-weight-bolder
+                                my-0
+                                p-footer
+                              "
+                            >
+                              S/. 225.00
+                            </p>
+                            <p
+                              class="
+                                float-right
+                                text-primary
+                                font-weight-bolder
+                                my-0
+                                p-footer
+                              "
+                            >
+                              S/. 0.00
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <p class="d-inline text-muted font-weight-bold mb-1">
+                            PROMEDIO CONSUMO
+                          </p>
+                          <h5 class="float-right text-default mb-0">
+                            <i class="fas fa-chart-line fa-lg"></i>
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title text-default my-0">S/. 0.00</h4>
+                          <p class="d-inline text-muted my-0">en 0 venta(s)</p>
+                          <p
+                            class="
+                              float-right
+                              text-default
+                              font-weight-bolder
+                              my-0
+                            "
+                          >
+                            por mesa
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <p class="d-inline text-muted font-weight-bold mb-1">
+                            PROMEDIO CONSUMO
+                          </p>
+                          <h5 class="float-right text-primary mb-0">
+                            <i class="fas fa-chart-bar fa-lg"></i>
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title text-primary my-0">
+                            S/. 26.00
+                          </h4>
+                          <p class="d-inline text-muted my-0">en 1 venta(s)</p>
+                          <p
+                            class="
+                              float-right
+                              text-primary
+                              font-weight-bolder
+                              my-0
+                            "
+                          >
+                            para llevar
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <p class="d-inline text-muted font-weight-bold mb-1">
+                            MOZO DEL D&Iacute;A
+                          </p>
+                          <h5 class="float-right text-muted mb-0">
+                            <label class="badge badge-primary"
+                              >RANKING DIARIO</label
+                            >
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title text-primary my-0">susanlar</h4>
+                          <p class="d-inline text-muted my-0">10 pedidos(s)</p>
+                          <p
+                            class="
+                              float-right
+                              text-primary
+                              font-weight-bolder
+                              my-0
+                            "
+                          >
+                            100% <i class="fas fa-level-up-alt"></i>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <p class="d-inline text-muted font-weight-bold mb-1">
+                            MESAS ATENDIDAS
+                          </p>
+                          <h5 class="float-right text-muted mb-0">
+                            <label class="badge badge-default">DIARIO</label>
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title text-default my-0">0</h4>
+                          <p class="d-inline text-muted my-0">
+                            mesa(s) atend&iacute;da(s)
+                          </p>
+                          <p
+                            class="
+                              float-right
+                              text-default
+                              font-weight-bolder
+                              my-0
+                            "
+                          >
+                            0% <i class="fas fa-bolt"></i>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <p class="d-inline text-muted font-weight-bold mb-1">
+                            PEDIDOS ANULADOS
+                          </p>
+                          <h5 class="float-right text-muted mb-0">
+                            <label class="badge badge-danger">DIARIO</label>
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <div class="div-p">
+                            <p
+                              class="
+                                d-inline
+                                text-danger
+                                font-weight-bold
+                                my-0
+                                div-pcenter
+                              "
+                            >
+                              0
+                            </p>
+                            <p
+                              class="
+                                float-right
+                                text-danger
+                                font-weight-bold
+                                my-0
+                                div-pcenter
+                              "
+                            ></p>
+                          </div>
+                          <div>
+                            <p class="d-inline text-danger my-0">
+                              pedido(s) anulado(s)
+                            </p>
+                            <!--<p class="d-inline text-danger font-weight-bolder my-0 p-footer">mesas <i class="fas fa-level-down-alt"></i></p>-->
+                            <!--<p class="float-right text-danger font-weight-bolder my-0 p-footer">% <i class="fas fa-level-down-alt"></i></p>-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <p class="d-inline text-muted font-weight-bold mb-1">
+                            PEDIDOS ATENDIDOS
+                          </p>
+                          <h5 class="float-right text-muted mb-0">
+                            <label class="badge badge-primary">DIARIO</label>
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title text-primary my-0">11</h4>
+                          <p class="d-inline text-primary my-0">
+                            pedido(s) atend&iacute;do(s)
+                          </p>
+                          <!--<p class="float-right text-primary font-weight-bolder my-0">% <i class="fas fa-bolt"></i></p>-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>-->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-table.js"></script>
+    <script
+      type="text/javascript"
+      src="js/locale/bootstrap-table-es-ES.js"
+    ></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script>
+      // MATERIAL DE IMPUT SELECT
+      $(document).ready(function () {
+        $('.mdb-select').material_select();
+      });
+    </script>
+    <script type="text/javascript">
+      function CargarData() {
+        swal('Actualizando Kardex, por favor espere.', {
+          icon: 'info',
+          closeOnClickOutside: false,
+          button: false,
+        });
+      }
+    </script>
+  </body>
+</html>

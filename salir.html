@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="storage/logo.ico" type="text/x-icon" />
+    <title>Meraki Software - Restaurantes</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="styles3.css" />
+    <link rel="stylesheet" href="styles4.css" />
+    <link rel="stylesheet" href="styles5.css" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Sistema de gestión para administración de restaurantes."
+    />
+    <meta property="og:url" content="http://merakisoftwareperu.com/rest" />
+    <meta
+      property="og:image"
+      content="http://merakisoftwareperu.com/rest/banner.webp"
+    />
+    <meta property="og:site_name" content="Meraki Software" />
+    <meta
+      property="fb:admins"
+      content="https://www.facebook.com/merakisoftwareperu/"
+    />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@merakisoftware" />
+    <meta property="og:title" content="Meraki Software" />
+    <style>
+      html,
+      body,
+      header,
+      .view {
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="color-gris-light ms-login-h-100">
+    <div class="contenedor-login">
+      <div class="row mx-0 w-100 align-self-stretch">
+        <div
+          class="col col-img justify-content-center fondo-login-reword"
+          style="background-image: url(storage/fondo-login.jpg)"
+        ></div>
+        <div class="col-static">
+          <div>
+            <form action="LOGIN" method="POST" autocomplete="off">
+              <div class="py-2 px-2">
+                <h4 class="text-center font-weight-bolder text-dark">
+                  BIENVENIDO
+                </h4>
+                <p class="text-center font-weight-bold text-black-50">
+                  Ingresa a tu cuenta
+                </p>
+                <div class="md-form">
+                  <i class="fas fa-user prefix ms-primario-text"></i>
+                  <input
+                    id="nick"
+                    type="text"
+                    name="nick"
+                    class="form-control"
+                    required
+                  />
+                  <label for="nick">Usuario</label>
+                </div>
+                <div class="md-form">
+                  <i class="fas fa-lock prefix ms-primario-text"></i>
+                  <input
+                    id="pass"
+                    type="password"
+                    name="pass"
+                    class="form-control"
+                    required
+                  />
+                  <label for="pass">Contraseña</label>
+                </div>
+                <select
+                  id="sucursal"
+                  name="sucursal"
+                  class="
+                    mdb-select
+                    md-form
+                    colorful-select
+                    dropdown-primary dropdown-ms-primario
+                  "
+                  required
+                >
+                  <option selected disabled>Elegir Sucursal</option>
+                </select>
+                <input name="tipo" value="admin" hidden />
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    name="opcion"
+                    value="login"
+                    class="
+                      btn btn-outline-primary btn-ms-primario btn-rounded
+                      waves-effect waves-light
+                    "
+                    onclick="Enviar();"
+                  >
+                    INGRESAR
+                  </button>
+                </div>
+              </div>
+            </form>
+            <input id="error" value="" hidden />
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      id="update"
+      class="btn-floating btn-lg btn-primary"
+      data-toggle="modal"
+      data-target="#fullHeightModalRight"
+    >
+      <i class="fas fa-clock"></i>
+    </a>
+    <div
+      class="modal fade left"
+      id="fullHeightModalRight"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="
+          modal-dialog modal-notify modal-primary modal-full-height modal-left
+        "
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title w-100 text-white" id="myModalLabel">
+              CONTROL DE ACCESO
+            </h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="text-center text-primary">
+                  <strong id="cabecera">Ingrese c&oacute;digo</strong>
+                </h5>
+                <h6 class="text-center text-primary">
+                  <strong id="titulo">Administrador</strong>
+                </h6>
+              </div>
+              <div class="col-12">
+                <h1 class="text-center text-primary h1">
+                  <strong id="clave"></strong
+                  ><strong class="btn-parpadea">_</strong>
+                </h1>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('1');"
+                >
+                  <span class="h1">1</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('2');"
+                >
+                  <span class="h1">2</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('3');"
+                >
+                  <span class="h1">3</span>
+                </button>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('4');"
+                >
+                  <span class="h1">4</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('5');"
+                >
+                  <span class="h1">5</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('6');"
+                >
+                  <span class="h1">6</span>
+                </button>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('7');"
+                >
+                  <span class="h1">7</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('8');"
+                >
+                  <span class="h1">8</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('9');"
+                >
+                  <span class="h1">9</span>
+                </button>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Limpiar();"
+                >
+                  <span class="h1"><i class="fa fa-eraser"></i></span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Digitar('0');"
+                >
+                  <span class="h1">0</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  style="width: 5rem"
+                  onclick="Retroceder();"
+                >
+                  <span class="h1"><i class="fa fa-arrow-left"></i></span>
+                </button>
+              </div>
+              <input type="hidden" id="unico" />
+              <input type="hidden" id="digitos" />
+              <input type="hidden" id="usuario" />
+              <input type="hidden" id="acceso" />
+            </div>
+            <div class="row text-center text-primary mt-3">
+              <div class="col-12">
+                <h4 class="h4" id="txt1"></h4>
+                <h1 class="h1" id="txt2"></h1>
+                <h1 class="h1" id="colaborador"></h1>
+                <h6 class="h6 text-success" id="registro"></h6>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-sm"
+              data-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--FIN BOTON DE ACTUALIZACION-->
+    <!--Scripts-->
+    <script type="text/javascript" src="Views/js/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript" src="Views/js/popper.min.js"></script>
+    <script type="text/javascript" src="Views/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Views/js/bootstrap-table.js"></script>
+    <script
+      type="text/javascript"
+      src="Views/js/locale/bootstrap-table-es-ES.js"
+    ></script>
+    <script type="text/javascript" src="Views/js/mdb.min.js"></script>
+    <script type="text/javascript" src="Views/js/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('.mdb-select').materialSelect();
+      });
+      $(document).ready(function () {
+        $('#sucursal').load('Views/cmbLogin.php');
+      });
+
+      function CerrarNotify(ctrl) {
+        $('#notify' + ctrl).modal('hide');
+      }
+
+      function Digitar(ctrl) {
+        var hidden = '';
+        document.getElementById('registro').innerHTML = '';
+        var unico = document.getElementById('unico').value;
+        var digitos = document.getElementById('digitos').value;
+        var usuario = document.getElementById('usuario').value;
+        var acceso = document.getElementById('acceso').value;
+        if (usuario === '') {
+          digitos = digitos + ctrl;
+          document.getElementById('digitos').value = digitos;
+        } else {
+          acceso = acceso + ctrl;
+          document.getElementById('acceso').value = acceso;
+        }
+        for (var i = 0; i < digitos.length; i++) {
+          hidden = hidden + '* ';
+        }
+        if (unico.length === 0 && usuario.length === 0) {
+          document.getElementById('clave').innerHTML = hidden;
+        } else if (
+          unico.length > 0 &&
+          digitos.length > 0 &&
+          usuario.length > 0
+        ) {
+          document.getElementById('clave').innerHTML = acceso;
+        } else {
+          document.getElementById('clave').innerHTML = digitos;
+        }
+        if (
+          digitos.length === 4 &&
+          unico.length === 0 &&
+          usuario.length === 0
+        ) {
+          Acceso(digitos);
+        } else if (
+          unico.length > 0 &&
+          digitos.length > 7 &&
+          usuario.length === 0
+        ) {
+          Cliente(digitos);
+        } else if (
+          unico.length > 0 &&
+          digitos.length > 0 &&
+          usuario.length > 0
+        ) {
+          document.getElementById('clave').innerHTML = acceso;
+          if (acceso.length === 4) {
+            Asistencia(digitos, acceso);
+          }
+        } else if (digitos.length < 8 && usuario.length === 0) {
+          document.getElementById('colaborador').innerHTML = '';
+        }
+      }
+
+      function Limpiar(ctrl) {
+        var unico = document.getElementById('unico').value;
+        document.getElementById('digitos').value = '';
+        document.getElementById('clave').innerHTML = '';
+        document.getElementById('colaborador').innerHTML = '';
+        document.getElementById('usuario').value = '';
+        document.getElementById('acceso').value = '';
+        if (unico === '') {
+          document.getElementById('cabecera').innerHTML =
+            'Ingrese c&oacute;digo';
+          document.getElementById('titulo').innerHTML = 'Administrador';
+        } else {
+          document.getElementById('cabecera').innerHTML =
+            'Ingrese n&uacute;mero de documento';
+          document.getElementById('titulo').innerHTML = 'Colaborador';
+        }
+      }
+
+      function Retroceder(ctrl) {
+        var hidden = '';
+        document.getElementById('registro').innerHTML = '';
+        var unico = document.getElementById('unico').value;
+        var digitos = document.getElementById('digitos').value;
+        var usuario = document.getElementById('usuario').value;
+        var acceso = document.getElementById('acceso').value;
+        if (digitos.length > 0 && usuario.length === 0) {
+          digitos = digitos.substring(0, digitos.length - 1);
+        } else if (acceso.length > 0 && usuario.length > 0) {
+          acceso = acceso.substring(0, acceso.length - 1);
+        }
+        for (var i = 0; i < digitos.length; i++) {
+          hidden = hidden + '* ';
+        }
+        document.getElementById('digitos').value = digitos;
+        document.getElementById('acceso').value = acceso;
+        if (unico.length === 0) {
+          document.getElementById('clave').innerHTML = hidden;
+        } else if (acceso.length === 0 && usuario.length === 0) {
+          document.getElementById('clave').innerHTML = digitos;
+        } else {
+          document.getElementById('clave').innerHTML = acceso;
+        }
+        if (digitos.length < 8 && usuario.length === 0) {
+          document.getElementById('colaborador').innerHTML = '';
+          document.getElementById('usuario').value = '';
+          if (unico === '') {
+            document.getElementById('cabecera').innerHTML =
+              'Ingrese c&oacute;digo';
+            document.getElementById('titulo').innerHTML = 'Administrador';
+          } else {
+            document.getElementById('cabecera').innerHTML =
+              'Ingrese n&uacute;mero de documento';
+            document.getElementById('titulo').innerHTML = 'Colaborador';
+          }
+        } else if (
+          unico.length > 0 &&
+          digitos.length > 0 &&
+          usuario.length > 0 &&
+          acceso.length > 0
+        ) {
+          document.getElementById('acceso').value = acceso;
+          if (acceso.length === 4) {
+            Asistencia(digitos, acceso);
+          }
+        } else if (usuario.length === 0 && acceso.length === 0) {
+          Cliente(digitos);
+        }
+      }
+
+      function Cliente(digitos) {
+        $.get('./Controllers/cUsuario.php', {
+          opcion: 'colaborador',
+          numero: digitos,
+        }).done(function (data) {
+          if (data !== '0') {
+            document.getElementById('colaborador').innerHTML = data;
+            document.getElementById('usuario').value = data;
+            document.getElementById('cabecera').innerHTML =
+              'Ingrese c&oacute;digo de acceso';
+            document.getElementById('titulo').innerHTML = 'Colaborador';
+            document.getElementById('clave').innerHTML = '';
+          } else {
+            document.getElementById('colaborador').innerHTML = '';
+            document.getElementById('usuario').value = '';
+            document.getElementById('cabecera').innerHTML =
+              'Ingrese n&uacute;mero de documento';
+            document.getElementById('titulo').innerHTML = 'Colaborador';
+          }
+        });
+      }
+
+      function Acceso(digitos) {
+        $.get('./Controllers/cConfigurar.php', {
+          opcion: 'acceso',
+          clave: digitos,
+        }).done(function (data) {
+          if (data === '0') {
+            document.getElementById('unico').value = '';
+            document.getElementById('digitos').value = '';
+            document.getElementById('clave').innerHTML = '';
+          } else {
+            document.getElementById('unico').value = data;
+            document.getElementById('digitos').value = '';
+            document.getElementById('clave').innerHTML = '';
+            document.getElementById('cabecera').innerHTML =
+              'Ingrese n&uacute;mero de documento';
+            document.getElementById('titulo').innerHTML = 'Colaborador';
+            document.getElementById('txt1').innerHTML = 'C&Oacute;DIGO ACCESO';
+            document.getElementById('txt2').innerHTML = data;
+          }
+        });
+      }
+
+      function Asistencia(digitos, acceso) {
+        $.get('./Controllers/cConfigurar.php', {
+          opcion: 'asistencia',
+          numero: digitos,
+          clave: acceso,
+        }).done(function (data) {
+          if (data !== '0') {
+            document.getElementById('cabecera').innerHTML =
+              'Ingrese n&uacute;mero de documento';
+            document.getElementById('txt2').innerHTML = data;
+            document.getElementById('unico').value = data;
+            document.getElementById('digitos').value = '';
+            document.getElementById('usuario').value = '';
+            document.getElementById('colaborador').innerHTML = '';
+            document.getElementById('registro').innerHTML =
+              'ASISTENCIA REGISTRADA';
+          }
+          document.getElementById('acceso').value = '';
+          document.getElementById('clave').innerHTML = '';
+        });
+      }
+    </script>
+    <script type="text/javascript">
+      var error = document.getElementById('error').value;
+      if (error === '253' || error === '497') {
+        swal(
+          'Error al iniciar sesión!',
+          'Usuario y/o contraseña inválidos!',
+          'warning'
+        ).then((value) => {
+          location.href = './';
+        });
+      }
+    </script>
+    <!--TOOLTIP-->
+    <script>
+      $(function () {
+        $('#update').popover({
+          trigger: 'click',
+        });
+      });
+    </script>
+    <!--TOOLTIP-->
+  </body>
+</html>
